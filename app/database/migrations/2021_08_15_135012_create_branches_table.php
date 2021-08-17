@@ -19,7 +19,7 @@ class CreateBranchesTable extends Migration
             $table->string('bangla_name')->nullable();
             $table->string('slug');
             $table->string('address_line1')->nullable();
-            $table->string('address_line12')->nullable();
+            $table->string('address_line2')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
 

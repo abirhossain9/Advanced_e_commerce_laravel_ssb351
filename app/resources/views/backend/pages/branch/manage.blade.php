@@ -49,7 +49,13 @@
                                     <td>{{$branch->address_line2}}</td>
                                     <td>{{$branch->email}}</td>
                                     <td>{{$branch->phone}}</td>
-                                    <td>{{$branch->status}}</td>
+                                    <td>
+                                        @if ($branch->status==1)
+                                           <span class="badge badge-success">active</span>
+                                        @elseif ($branch->status==1)
+                                           <span class="badge badge-danger">inactive</span>
+                                        @endif
+                                    </td>
                                     <td>Action</td>
                                 </tr>
 
