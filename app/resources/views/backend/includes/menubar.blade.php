@@ -10,7 +10,7 @@
             <span class="menu-item-label">Dashboard</span>
           </a>
         </li>
-        <label class="sidebar-label pd-x-10 mg-t-25 mg-b-20 tx-info">Branch Management</label>
+        <label class="sidebar-label pd-x-10 mg-t-25 mg-b-20 tx-info">Education Department</label>
         {{-- Branch Management --}}
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
