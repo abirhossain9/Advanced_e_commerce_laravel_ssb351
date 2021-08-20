@@ -16,7 +16,7 @@
             <div class="card bd-0 shadow-base">
                 <div class="pd-25">
 
-                        <form action="" method="POST">
+                        <form action="{{route('branch.update',$branch->id)}}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-4">
@@ -50,7 +50,7 @@
 
                                     <div class="form-group">
                                         <label>Address Line 2</label>
-                                        <input type="text" name="address2" class="form-control" required="required" value="{{$branch->address_line1}}" autocomplete="off">
+                                        <input type="text" name="address2" class="form-control" required="required" value="{{$branch->address_line2}}" autocomplete="off">
                                     </div>
 
                                 </div>
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="submit" name="addBranch" value="Add New Branch" class="btn btn-teal btn-block mg-b-10">
+                                        <input type="submit" name="addBranch" value="Edit Branch" class="btn btn-teal btn-block mg-b-10">
                                     </div>
                                 </div>
                             </div>

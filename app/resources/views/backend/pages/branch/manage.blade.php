@@ -52,7 +52,7 @@
                                     <td>
                                         @if ($branch->status==1)
                                            <span class="badge badge-success">active</span>
-                                        @elseif ($branch->status==1)
+                                        @elseif ($branch->status==2)
                                            <span class="badge badge-danger">inactive</span>
                                         @endif
                                     </td>
