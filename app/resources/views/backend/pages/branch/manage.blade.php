@@ -59,7 +59,7 @@
                                     <td>
                                         <ul class="custom-action">
                                             <li>
-                                                <a href="">
+                                                <a href="{{route('branch.edit',$branch->id)}}">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
                                             </li>
