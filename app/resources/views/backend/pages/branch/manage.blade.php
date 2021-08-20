@@ -14,7 +14,9 @@
             {{-- page body content start --}}
 
             <div class="card bd-0 shadow-base">
+                 @include('backend.flash-massage')
                 <div class="d-md-flex justify-content-between pd-25">
+
                     {{-- Table Content start --}}
                     <div class="bd bd-gray-300 rounded table-responsive">
                         <table class="table table-bordered table-striped table-hover table-custom">

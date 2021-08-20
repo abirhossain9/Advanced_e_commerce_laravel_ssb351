@@ -38,6 +38,21 @@ class BranchController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'phone' => 'required|max:255',
+            // 'bangla_name' => 'required|max:255',
+            // 'address_line1' => 'required|max:255',
+            // 'address_line2' => 'required|max:255',
+            // 'email' => 'required|max:255',
+        ],[
+            'name.required' => 'Branch Name Cannot be empty',
+            'phone.required' => 'phone No Cannot be empty',
+            // 'bangla_name.required' => 'Bangla Name Cannot be empty',
+            // 'address_line1.required' => 'Adress Line 1 Cannot be empty',
+            // 'address_line2.required' => 'Adress Line 2 Name Cannot be empty',
+            // 'email.required' => 'Enail Cannot be empty',
+        ]);
         $branch = new Branch();
         $branch->name = $request->name;
         $branch->bangla_name = $request->bangla_name;
@@ -49,8 +64,7 @@ class BranchController extends Controller
         $branch->status = $request->status;
 
         $branch->save();
-        return redirect()->route('branch.manage');
-
+        return redirect()->route('branch.manage')->with('success','New branch added successfully');
 
     }
 

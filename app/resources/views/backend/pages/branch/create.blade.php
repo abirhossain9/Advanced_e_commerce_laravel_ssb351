@@ -15,7 +15,7 @@
 
             <div class="card bd-0 shadow-base">
                 <div class="pd-25">
-
+                    @include('backend.flash-massage')
                         <form action="{{route('branch.store')}}" method="POST">
                             @csrf
                             <div class="row">
