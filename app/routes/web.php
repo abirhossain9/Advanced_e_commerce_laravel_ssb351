@@ -40,7 +40,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/store','App\Http\Controllers\Backend\BranchController@store')->name('branch.store');
         Route::get('/edit/{id}','App\Http\Controllers\Backend\BranchController@edit')->name('branch.edit');
         Route::post('/update/{id}','App\Http\Controllers\Backend\BranchController@update')->name('branch.update');
-        Route::post('/destroy/{id}','App\Http\Controllers\Backend\BranchController@update')->name('branch.destroy');
+        Route::post('/destroy/{id}','App\Http\Controllers\Backend\BranchController@destroy')->name('branch.destroy');
     });
 
 });
