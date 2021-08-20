@@ -4,3 +4,18 @@
 .alert {
     margin-bottom: 0;
 }
+.custom-action {
+    padding: 0;
+    margin: 0;
+}
+.custom-action li {
+    list-style: none;
+    display: inline;
+    margin: 0px 7px;
+}
+.fa-edit {
+    color: #198754;
+}
+.fa-trash {
+    color: #dc3545;
+}

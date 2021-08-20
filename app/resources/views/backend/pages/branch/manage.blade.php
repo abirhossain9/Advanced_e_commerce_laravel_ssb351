@@ -56,7 +56,20 @@
                                            <span class="badge badge-danger">inactive</span>
                                         @endif
                                     </td>
-                                    <td>Action</td>
+                                    <td>
+                                        <ul class="custom-action">
+                                            <li>
+                                                <a href="">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <i class="fa fa-trash "></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
                                 </tr>
 
 
