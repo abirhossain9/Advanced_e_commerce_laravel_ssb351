@@ -31,9 +31,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-//this routes are for branch management
+
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/dashboard', 'App\Http\Controllers\Backend\DashboardController@dashboard') ->name('admin.dashboard');
+
+    //this routes are for branch management
     Route::group(['prefix' => '/branch'], function(){
         Route::get('/manage','App\Http\Controllers\Backend\BranchController@index')->name('branch.manage');
         Route::get('/create','App\Http\Controllers\Backend\BranchController@create')->name('branch.create');
@@ -43,4 +45,15 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\BranchController@destroy')->name('branch.destroy');
     });
 
+    //this routes are for mentors profile management
+    Route::group(['prefix' => '/branch'], function(){
+        Route::get('/manage','App\Http\Controllers\Backend\MentrorController@index')->name('mentor.manage');
+        Route::get('/create','App\Http\Controllers\Backend\MentrorController@create')->name('mentor.create');
+        Route::post('/store','App\Http\Controllers\Backend\MentrorController@store')->name('mentor.store');
+        Route::get('/edit/{id}','App\Http\Controllers\Backend\MentrorController@edit')->name('mentor.edit');
+        Route::post('/update/{id}','App\Http\Controllers\Backend\MentrorController@update')->name('mentor.update');
+        Route::post('/destroy/{id}','App\Http\Controllers\Backend\MentrorController@destroy')->name('mentor.destroy');
+    });
+
 });
+
