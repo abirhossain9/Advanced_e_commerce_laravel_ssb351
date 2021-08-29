@@ -16,7 +16,8 @@ class MentrorController extends Controller
      */
     public function index()
     {
-        //
+        $mentors = Mentor::orderBy('id','asc')->get();
+        return view('backend.pages.mentor.manage',compact('mentors'));
     }
 
     /**
