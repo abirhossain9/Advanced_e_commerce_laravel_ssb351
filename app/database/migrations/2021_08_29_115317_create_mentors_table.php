@@ -27,6 +27,7 @@ class CreateMentorsTable extends Migration
             $table->text('upwork_img')->nullable();
             $table->string('upwork_url')->nullable();
             $table->text('profile_pic')->nullable();
+            $table->string('status')->default(1)->comment('1 = Active, 2 = Inactive');
             $table->timestamps();
         });
     }
