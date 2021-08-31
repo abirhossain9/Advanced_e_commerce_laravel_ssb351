@@ -46,7 +46,7 @@ Route::group(['prefix' => 'admin'], function(){
     });
 
     //this routes are for mentors profile management
-    Route::group(['prefix' => '/branch'], function(){
+    Route::group(['prefix' => '/mentor'], function(){
         Route::get('/manage','App\Http\Controllers\Backend\MentrorController@index')->name('mentor.manage');
         Route::get('/create','App\Http\Controllers\Backend\MentrorController@create')->name('mentor.create');
         Route::post('/store','App\Http\Controllers\Backend\MentrorController@store')->name('mentor.store');
