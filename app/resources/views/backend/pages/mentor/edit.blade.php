@@ -16,61 +16,104 @@
             <div class="card bd-0 shadow-base">
                 <div class="pd-25">
 
-                        <form action="{{route('branch.update',$branch->id)}}" method="POST">
+                        <form action="{{route('mentor.update',$mentor->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label>Branch Name</label>
-                                        <input type="text" name="name" class="form-control" required="required" autocomplete="off" value="{{$branch->name}}">
+                                        <label>Full Name</label>
+                                        <input type="text" name="fullname" class="form-control" required="required" value="{{$mentor->fullname}}" autocomplete="off">
                                     </div>
                                      <div class="form-group">
-                                        <label>Address Line 1</label>
-                                        <input type="text" name="address1" class="form-control" required="required" autocomplete="off" value="{{$branch->address_line1}}">
+                                        <label>Designation</label>
+                                        <input type="text" name="designation" class="form-control" required="required" value="{{$mentor->designation}}" autocomplete="off">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" name="address" class="form-control" required="required" value="{{$mentor->address}}" autocomplete="off">
+                                    </div>
+                                    <div class="form-group">
+                                    <label>Overview</label>
+                                    <textarea type="text" rows="4" name="overview" class="form-control" required="required" ">{{$mentor->overview}}</textarea>
+                                </div>
+                                </div>
+                                <div class="col-lg-4">
+
+                                    <div class="form-group">
+                                         <label>Phone</label>
+                                         <input type="text" name="phone" class="form-control" required="required" autocomplete="off" value="{{$mentor->overview}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email Address</label>
+                                        <input type="email" name="email" class="form-control" required="required" autocomplete="off" value="{{$mentor->email}}">
+                                    </div>
+                                    <div class="form-gorup">
+                                        <label>Fiverr Url</label>
+                                        <input type="text" name="fiver_url" class="form-control" value="{{$mentor->fiverr_url}}">
+                                    </div>
+                                    <div class="form-gorup">
+                                        <label>Upwork Url</label>
+                                        <input type="text" name="upwork_url" class="form-control" value="{{$mentor->upwork_url}}">
                                     </div>
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select class="form-control" name="status">
                                             <option value="1">Please Select The Status</option>
-                                            <option value="1" @if ($branch->status==1)
-                                                selected
-                                            @endif >Active</option>
-                                            <option value="2" @if ($branch->status==2)
-                                                selected
-                                            @endif >Inactive</option>
+                                            <option value="1" @if($mentor->status == 1) selected @endif>Active</option>
+                                            <option value="2" @if($mentor->status == 2) selected @endif>Inactive</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
-
-                                    <div class="form-group">
-                                         <label>Branch Name (Bangla)</label>
-                                         <input type="text" name="bangla_name" class="form-control" required="required" autocomplete="off" value="{{$branch->bangla_name}}">
-                                       </div>
-
-                                    <div class="form-group">
-                                        <label>Address Line 2</label>
-                                        <input type="text" name="address2" class="form-control" required="required" value="{{$branch->address_line2}}" autocomplete="off">
-                                    </div>
-
-                                </div>
 
                                 <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label>Email Address</label>
-                                        <input type="email" name="email" class="form-control" required="required" autocomplete="off" value="{{$branch->email}}">
+                                     <div class="form-gorup">
+                                        <label>Profile Picture</label>
+                                          <br>
+                                        @if ($mentor->profile_pic==NULL)
+                                          <img src="{{asset('backend/img/mentor/default.jpg')}}" alt="" width="40">
+                                        @else
+                                          <img src="{{asset('backend/img/mentor/'.$mentor->profile_pic)}}" alt="" width="40">
+
+                                        @endif
+                                    <br><br>
+                                        <input type="file" name="image" class="form-control-file">
                                     </div>
-                                     <div class="form-group">
-                                        <label>Phone No. [use comma to set multiple phone no.]</label>
-                                        <input type="text" name="phone" class="form-control" required="required" autocomplete="off" value="{{$branch->phone}}" >
+
+                                    <div class="form-gorup">
+                                        <br>
+                                        <label>Fiverr Logo</label>
+                                        <br>
+                                        @if ($mentor->fiverr_img==NULL)
+
+                                          no logo uploaded
+                                        @else
+                                          <img src="{{asset('backend/img/mentor/badge/'.$mentor->fiverr_img)}}" alt="" width="40">
+
+                                        @endif
+                                    <br>
+                                        <input type="file" name="fiverr_img" class="form-control-file">
+                                    </div>
+
+                                    <div class="form-gorup">
+                                        <br>
+                                        <label>Upwork Logo</label>
+                                          <br>
+                                        @if ($mentor->upwork_img==NULL)
+                                          no logo uploaded
+                                        @else
+                                          <img src="{{asset('backend/img/mentor/badge/'.$mentor->upwork_img)}}" alt="" width="40">
+
+                                        @endif
+                                    <br>
+                                        <input type="file" name="upwork_img" class="form-control-file">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" name="updateMentor" value="Update Mentor" class="custom-btn btn btn-teal mg-b-10">
                                     </div>
 
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <input type="submit" name="addBranch" value="Edit Branch" class="btn btn-teal btn-block mg-b-10">
-                                    </div>
-                                </div>
+
+
                             </div>
 
                         </form>

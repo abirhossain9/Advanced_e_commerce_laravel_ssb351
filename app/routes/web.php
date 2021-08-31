@@ -55,5 +55,6 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\MentrorController@destroy')->name('mentor.destroy');
     });
 
+
 });
 
