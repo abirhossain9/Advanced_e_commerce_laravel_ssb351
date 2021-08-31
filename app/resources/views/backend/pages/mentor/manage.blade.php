@@ -40,7 +40,12 @@
 
                                 <tr>
                                     <th scope="row">{{$i;}}</th>
-                                    <td>{{$mentor->profile_pic}}</td>
+                                    <td>@if ($mentor->profile_pic==NULL)
+                                         <img src="{{asset('backend/img/mentor/default.jpg')}}" alt="" width="40">
+                                    @else
+                                         <img src="{{asset('backend/img/mentor/'.$mentor->profile_pic)}}" alt="" width="40">
+
+                                    @endif</td>
                                     <td>{{$mentor->fullname}}</td>
                                     <td>{{$mentor->designation}}</td>
                                     <td>{{$mentor->phone}}</td>

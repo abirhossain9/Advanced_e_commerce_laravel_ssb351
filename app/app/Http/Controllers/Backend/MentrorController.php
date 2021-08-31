@@ -57,23 +57,23 @@ class MentrorController extends Controller
         $mentor->status =$request->status;
         if($request->image){
             $image = $request->file('image');
-            $img = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('backend/img/mentor'.$img);
+            $img = rand() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('backend/img/mentor/'.$img);
             Image::make($image)->save($location);
             $mentor->profile_pic = $img;
 
         }
         if($request->fiverr_img){
             $fiverr = $request->file('fiverr_img');
-            $fvr = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('backend/img/mentor/badge'.$fvr);
+            $fvr = rand() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('backend/img/mentor/badge/'.$fvr);
             Image::make($fiverr)->save($location);
             $mentor->fiverr_img = $fvr;
         }
         if($request->upwork_img){
             $upwork = $request->file('upwork_img');
-            $upr = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('backend/img/mentor/badge'.$upr);
+            $upr = rand() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('backend/img/mentor/badge/'.$upr);
             Image::make($upwork)->save($location);
             $mentor->upwork_img = $upr;
         }
