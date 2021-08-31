@@ -57,12 +57,12 @@ Route::group(['prefix' => 'admin'], function(){
 
     //this routes are for course management
     Route::group(['prefix' => '/course'], function(){
-        Route::get('/manage','App\Http\Controllers\Backend\MentrorController@index')->name('course.manage');
-        Route::get('/create','App\Http\Controllers\Backend\MentrorController@create')->name('course.create');
-        Route::post('/store','App\Http\Controllers\Backend\MentrorController@store')->name('course.store');
-        Route::get('/edit/{id}','App\Http\Controllers\Backend\MentrorController@edit')->name('course.edit');
-        Route::post('/update/{id}','App\Http\Controllers\Backend\MentrorController@update')->name('course.update');
-        Route::post('/destroy/{id}','App\Http\Controllers\Backend\MentrorController@destroy')->name('course.destroy');
+        Route::get('/manage','App\Http\Controllers\Backend\CourseController@index')->name('course.manage');
+        Route::get('/create','App\Http\Controllers\Backend\CourseController@create')->name('course.create');
+        Route::post('/store','App\Http\Controllers\Backend\CourseController@store')->name('course.store');
+        Route::get('/edit/{id}','App\Http\Controllers\Backend\CourseController@edit')->name('course.edit');
+        Route::post('/update/{id}','App\Http\Controllers\Backend\CourseController@update')->name('course.update');
+        Route::post('/destroy/{id}','App\Http\Controllers\Backend\CourseController@destroy')->name('course.destroy');
     });
 
 
