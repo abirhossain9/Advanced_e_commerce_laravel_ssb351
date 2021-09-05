@@ -92,7 +92,13 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course = Course::find($id);
+        if(!empty($course)){
+            return view('backend.pages.course.edit',compact('course'));
+        }
+        else{
+            return redirect()->route('course.manage');
+        }
     }
 
     /**
@@ -104,7 +110,37 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $course = Course::find($id);
+        $course->english_title= $request->english_title;
+        $course->bangla_title= $request->bangla_title;
+        $course->slug= Str::slug($request->english_title);
+        $course->intro_video= $request->intro_video;
+        $course->price= $request->price;
+        $course->bangla_price= $request->bangla_price;
+        $course->graduate_number= $request->graduate_number;
+        $course->total_lecture= $request->total_lecture;
+        $course->class_hour= $request->class_hour;
+        $course->course_duration= $request->course_duration;
+        $course->motivational_content= $request->motivational_content;
+        $course->course_opportunity= $request->course_opportunity;
+        $course->curriculam_description= $request->curriculam_description;
+        $course->course_requirement= $request->course_requirement;
+        $course->cupon_status= $request->cupon_status;
+        $course->status= $request->status;
+
+        if(!empty($request->image)){
+            if(File::exists('backend/img/course/'.$course->image)){
+                File::delete('backend/img/course/'.$course->image);
+            }
+            $image = $request->file('image');
+            $img = rand() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('backend/img/course/'.$img);
+            Image::make($image)->save($location);
+            $course->profile_pic = $img;
+        }
+        $course->save();
+        return redirect()->route('course.manage');
+
     }
 
     /**
