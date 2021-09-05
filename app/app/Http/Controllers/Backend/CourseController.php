@@ -151,6 +151,11 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course = Course::find($id);
+        if(File::exists('backend/img/course/'.$course->image)){
+                File::delete('backend/img/course/'.$course->image);
+        }
+        $course->delete();
+        return redirect()->route('course.manage');
     }
 }
