@@ -39,7 +39,7 @@
                                      @if ($course->image==NULL)
                                          <img src="{{asset('backend/img/course/default.jpg')}}" alt="" width="40">
                                     @else
-                                         <img src="{{asset('backend/img/course/'.$mentor->profile_pic)}}" alt="" width="40">
+                                         <img src="{{asset('backend/img/course/'.$course->image)}}" alt="" width="80">
 
                                     @endif
                                     </td>
