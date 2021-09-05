@@ -22,6 +22,7 @@ class Course extends Model
         'motivational_content',
         'course_opportunity',
         'curriculam_description',
+        'course_requirement',
         'cupon_status',
         'status',
         'image'
