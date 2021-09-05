@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Backend\Course;
+use Illuminate\Support\Str;
+use File;
+use Image;
 
 class CourseController extends Controller
 {
@@ -14,7 +18,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Course::orderBy('id','asc')->get();
+        return view('backend.pages.course.manage',compact('courses'));
     }
 
     /**
@@ -24,7 +29,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.course.create')
     }
 
     /**
