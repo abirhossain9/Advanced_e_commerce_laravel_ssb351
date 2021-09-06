@@ -64,6 +64,15 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/update/{id}','App\Http\Controllers\Backend\CourseController@update')->name('course.update');
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\CourseController@destroy')->name('course.destroy');
     });
+    //this routes are for curriculum management
+    Route::group(['prefix' => '/curriculum'], function(){
+        Route::get('/manage','App\Http\Controllers\Backend\CourseCurriculumController@index')->name('curriculum.manage');
+        Route::get('/create','App\Http\Controllers\Backend\CourseCurriculumController@create')->name('curriculum.create');
+        Route::post('/store','App\Http\Controllers\Backend\CourseCurriculumController@store')->name('curriculum.store');
+        Route::get('/edit/{id}','App\Http\Controllers\Backend\CourseCurriculumController@edit')->name('curriculum.edit');
+        Route::post('/update/{id}','App\Http\Controllers\Backend\CourseCurriculumController@update')->name('curriculum.update');
+        Route::post('/destroy/{id}','App\Http\Controllers\Backend\CourseCurriculumController@destroy')->name('curriculum.destroy');
+    });
 
 
 });
