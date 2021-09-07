@@ -106,6 +106,11 @@
 
                             </tbody>
                         </table>
+                        @if ($branches->count()==0)
+                            <div class="alert alert-info">
+                                No branch added please add a branch first
+                            </div>
+                        @endif
 
                     </div>
 
