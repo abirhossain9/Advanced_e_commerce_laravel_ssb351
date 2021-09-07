@@ -41,7 +41,7 @@
 
                                     <div class="form-group">
                                          <label>Phone</label>
-                                         <input type="text" name="phone" class="form-control" required="required" autocomplete="off" value="{{$mentor->overview}}">
+                                         <input type="text" name="phone" class="form-control" required="required" autocomplete="off" value="{{$mentor->phone}}">
                                     </div>
                                     <div class="form-group">
                                         <label>Email Address</label>

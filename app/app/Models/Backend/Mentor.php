@@ -20,6 +20,7 @@ class Mentor extends Model
         'fiverr_url',
         'upwork_img',
         'upwork_url',
-        'profile_pic'
+        'profile_pic',
+        'status'
     ];
 }
