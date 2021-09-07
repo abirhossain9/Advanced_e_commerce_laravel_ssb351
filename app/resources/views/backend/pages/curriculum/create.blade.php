@@ -3,7 +3,7 @@
 <div class="br-pagetitle">
     <i class="icon ion-ios-home-outline"></i>
     <div>
-        <h4>New Course Curriculum</h4>
+        <h4>Update Curriculum</h4>
         <p class="mg-b-0">Create New Course Curriculum</p>
     </div>
 </div>
@@ -119,7 +119,7 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="submit" name="addCurriculum" value="Publish Curriculum" class="custom-btn btn btn-teal mg-b-10">
+                                        <input type="submit" name="addCurriculum" value="Save Changes" class="custom-btn btn btn-teal mg-b-10">
                                     </div>
 
                                 </div>

@@ -16,7 +16,7 @@
             <div class="card bd-0 shadow-base">
                 <div class="pd-25">
                     @include('backend.flash-massage')
-                        <form action="{{route('curriculum.store')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('curriculum.update',$curriculum->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 {{-- Course Select --}}
