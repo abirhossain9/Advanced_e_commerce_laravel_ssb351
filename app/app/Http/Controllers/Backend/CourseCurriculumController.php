@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\CourseCurriculum;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use File;
+use Image;
 
 class CourseCurriculumController extends Controller
 {
@@ -14,7 +18,8 @@ class CourseCurriculumController extends Controller
      */
     public function index()
     {
-        //
+        $curriculums = CourseCurriculum::orderBy('id','asc')->get();
+        return view('backend.pages.curriculum.manage',compact('curriculums'));
     }
 
     /**
