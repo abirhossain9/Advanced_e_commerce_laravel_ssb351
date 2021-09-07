@@ -27,4 +27,7 @@ class CourseCurriculum extends Model
         'five_desc',
         'status',
     ];
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
 }
