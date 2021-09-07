@@ -35,7 +35,7 @@
 
                                 <tr>
                                     <th scope="row">{{$i;}}</th>
-                                    <td>{{$curriculum->fullname}}</td>
+                                    <td>{{$curriculum->course_id}}</td>
                                     <td>
                                         @if ($curriculum->status==1)
                                         <span class="badge badge-success">active</span>
