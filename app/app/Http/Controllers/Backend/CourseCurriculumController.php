@@ -29,7 +29,7 @@ class CourseCurriculumController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.curriculum.create');
     }
 
     /**
