@@ -83,7 +83,14 @@ class CourseCurriculumController extends Controller
      */
     public function edit($id)
     {
-        //
+        $courses = Course::orderby('english_title', 'asc')->get();
+        $curriculum = CourseCurriculum::find($id);
+        if(!empty($curriculum)){
+            return view('backend.pages.curriculum.edit',compact('curriculum','courses'));
+        }
+        else{
+            return redirect()->route('curriculum.manage');
+        }
     }
 
     /**
