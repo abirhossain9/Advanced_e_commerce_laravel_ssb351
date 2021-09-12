@@ -28,7 +28,7 @@ class CouponController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.coupon.create');
     }
 
     /**
@@ -39,7 +39,17 @@ class CouponController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $coupon = new Coupon();
+        $coupon->code  =$request->code;
+        $coupon->discount_type =$request->discount_type;
+        $coupon->course_type =$request->course_type;
+        $coupon->fixed_value =$request->fixed_value;
+        $coupon->percent_value =$request->percent_value;
+        $coupon->status =$request->status;
+        // dd($coupon);
+        // exit();
+        $coupon->save();
+        return redirect()->route('coupon.manage');
     }
 
     /**
@@ -61,7 +71,7 @@ class CouponController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**

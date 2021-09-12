@@ -41,9 +41,9 @@
                                     <td>{{$coupon->code}}</td>
                                     <td>
                                         @if ($coupon->discount_type==1)
-                                        <span class="badge badge-info">Fixed Amount</span>
+                                        <span class="badge badge-dark">Fixed Amount</span>
                                         @elseif ($coupon->discount_type==2)
-                                        <span class="badge badge-success">Percentage Off</span>
+                                        <span class="badge badge-warning">Percentage Off</span>
                                         @endif
                                     </td>
                                     <td>
@@ -53,8 +53,20 @@
                                         <span class="badge badge-success">Offline Course</span>
                                         @endif
                                     </td>
-                                    <td>{{$coupon->fixed_value}}</td>
-                                    <td>{{$coupon->percent_value}}</td>
+                                    <td>
+                                        @if (!empty($coupon->fixed_value))
+                                        {{$coupon->fixed_value }} BDT
+                                        @else
+                                        -/-
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if (!empty($coupon->percent_value))
+                                        {{$coupon->percent_value }} BDT
+                                        @else
+                                        -/-
+                                        @endif
+                                    </td>
                                     <td>
                                         @if ($coupon->status==1)
                                         <span class="badge badge-success">active</span>
