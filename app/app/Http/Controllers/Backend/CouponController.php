@@ -71,7 +71,13 @@ class CouponController extends Controller
      */
     public function edit($id)
     {
-
+        $coupon = Coupon::find($id);
+        if(!is_null($coupon)){
+            return view('backend.pages.coupon.edit',compact('coupon'));
+        }
+        else{
+            return route('coupon.manage');
+        }
     }
 
     /**
@@ -83,7 +89,17 @@ class CouponController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $coupon = Coupon::find($id);
+        $coupon->code  =$request->code;
+        $coupon->discount_type =$request->discount_type;
+        $coupon->course_type =$request->course_type;
+        $coupon->fixed_value =$request->fixed_value;
+        $coupon->percent_value =$request->percent_value;
+        $coupon->status =$request->status;
+        // dd($coupon);
+        // exit();
+        $coupon->save();
+        return redirect()->route('coupon.manage');
     }
 
     /**
