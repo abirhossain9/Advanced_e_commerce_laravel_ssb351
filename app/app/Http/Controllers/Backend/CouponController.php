@@ -16,7 +16,9 @@ class CouponController extends Controller
      */
     public function index()
     {
-        //
+        $coupons = Coupon::orderBy('code','asc')->get();
+        return view('backend.pages.coupon.manage',compact('coupons'));
+
     }
 
     /**
