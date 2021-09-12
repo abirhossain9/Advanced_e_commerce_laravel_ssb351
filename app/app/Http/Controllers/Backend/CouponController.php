@@ -110,6 +110,13 @@ class CouponController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $coupon = Coupon::find($id);
+        if(!is_null($coupon)){
+            $coupon->delete();
+            return redirect()->route('coupon.manage');
+        }
+        else{
+             return redirect()->route('coupon.manage');
+        }
     }
 }
