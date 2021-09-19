@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Backend\Batch;
+use App\Models\Backend\Branch;
+use App\Models\Backend\Course;
+use App\Models\Backend\Mentor;
 use Illuminate\Support\Str;
 use File;
 use Image;
@@ -18,7 +21,8 @@ class BatchController extends Controller
      */
     public function index()
     {
-        //
+        $batches = Batch::orderBy('id','desc')->get();
+        return view('backend.pages.batch.manage',compact('batches'));
     }
 
     /**
@@ -28,7 +32,7 @@ class BatchController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.batch.create')
     }
 
     /**

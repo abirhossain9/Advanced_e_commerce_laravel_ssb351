@@ -3,8 +3,8 @@
 <div class="br-pagetitle">
     <i class="icon ion-ios-home-outline"></i>
     <div>
-        <h4>Manage All Mentor</h4>
-        <p class="mg-b-0">Manage All Mentor From Here.</p>
+        <h4>Manage All Batch</h4>
+        <p class="mg-b-0">Manage All Batches Of Admission Going On From Here.</p>
     </div>
 </div>
 
@@ -23,50 +23,60 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">#sl.</th>
-                                    <th scope="col">Thumbnail</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Designation</th>
-                                    <th scope="col">phone</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Address</th>
+                                    <th scope="col">Batch Name</th>
+                                    <th scope="col">Admission Status</th>
+                                    <th scope="col">Course Name</th>
+                                    <th scope="col">Mentor Name</th>
+                                    <th scope="col">Branch Name</th>
+                                    <th scope="col">Class Starting Date</th>
+                                    <th scope="col">Batch Type</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @php $i = 0; @endphp
-                                @foreach($mentors as $mentor)
+                                @foreach($batches as $batch)
                                 @php $i++; @endphp
 
                                 <tr>
                                     <th scope="row">{{$i;}}</th>
-                                    <td>@if ($mentor->profile_pic==NULL)
-                                         <img src="{{asset('backend/img/mentor/default.jpg')}}" alt="" width="40">
-                                    @else
-                                         <img src="{{asset('backend/img/mentor/'.$mentor->profile_pic)}}" alt="" width="40">
-
-                                    @endif</td>
-                                    <td>{{$mentor->fullname}}</td>
-                                    <td>{{$mentor->designation}}</td>
-                                    <td>{{$mentor->phone}}</td>
-                                    <td>{{$mentor->email}}</td>
-                                    <td>{{$mentor->address}}</td>
+                                    <td>{{$batch->batch_name}}</td>
                                     <td>
-                                        @if ($mentor->status==1)
+                                        @if ($batch->admission_status==1)
+                                        <span class="badge badge-success">Admission Going On</span>
+                                        @elseif ($batch->admission_status==2)
+                                        <span class="badge badge-warning">Admission Closed</span>
+                                        @endif
+                                    </td>
+                                    <td>{{$batch->course_id}}</td>
+                                    <td>{{$batch->mentor_id}}</td>
+                                    <td>{{$batch->branch_id}}</td>
+                                    <td>{{$batch->starting_date}}</td>
+                                    <td>
+                                        @if ($batch->batch_type==1)
+                                        <span class="badge badge-info">Online Batch</span>
+                                        @elseif ($batch->batch_type==2)
+                                        <span class="badge badge-dark">Offline Batch</span>
+                                        @endif
+                                    </td>
+                                    <td>{{$batch->address}}</td>
+                                    <td>
+                                        @if ($batch->status==1)
                                         <span class="badge badge-success">active</span>
-                                        @elseif ($mentor->status==2)
+                                        @elseif ($batch->status==2)
                                         <span class="badge badge-danger">inactive</span>
                                         @endif
                                     </td>
                                     <td>
                                         <ul class="custom-action">
                                             <li>
-                                                <a href="{{route('mentor.edit',$mentor->id)}}">
+                                                <a href="{{route('batch.edit',$batch->id)}}">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="" data-toggle="modal" data-target="#mentor{{$mentor->id}}">
+                                                <a href="" data-toggle="modal" data-target="#batch{{$batch->id}}">
                                                     <i class="fa fa-trash "></i>
                                                 </a>
                                             </li>
@@ -75,7 +85,7 @@
                                     <!-- Modal -->
                                     <div
                                         class="modal fade"
-                                        id="mentor{{$mentor->id}}"
+                                        id="batch{{$batch->id}}"
                                         tabindex="-1"
                                         role="dialog"
                                         aria-labelledby="exampleModalCenterTitle"
@@ -83,7 +93,7 @@
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Delte This mentor ?</h5>
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Delete This batch ?</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -92,7 +102,7 @@
                                                     <div class="modal-button text-center">
                                                         <ul>
                                                             <li>
-                                                                <form action="{{route('mentor.destroy',$mentor->id)}}" method="POST">
+                                                                <form action="{{route('batch.destroy',$mentor->id)}}" method="POST">
                                                                     @csrf
                                                                     <button type="submit" class="btn btn-danger">Confirm</button>
                                                                 </form>
@@ -113,9 +123,9 @@
 
                             </tbody>
                         </table>
-                        @if ($mentors->count()==0)
+                        @if ($batches->count()==0)
                             <div class="alert alert-info">
-                                No Mentor added please add a mentor first
+                                No Batch added please add a batch first
                             </div>
                         @endif
 
