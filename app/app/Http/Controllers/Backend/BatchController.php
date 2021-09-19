@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Backend\Batch;
+use Illuminate\Support\Str;
+use File;
+use Image;
 
 class BatchController extends Controller
 {
