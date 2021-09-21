@@ -85,7 +85,16 @@ class BatchController extends Controller
      */
     public function edit($id)
     {
-        //
+        $batch = Batch::find($id);
+        if(!empty($batch)){
+            $courses = Course::orderBy('english_title','asc')->get();
+            $mentors = Mentor::orderBy('fullname','asc')->get();
+            $branches = Branch::orderBy('name','asc')->get();
+            return view('backend.pages.batch.edit',compact('batch','courses','mentors','branches'));
+        }
+        else{
+            return view('backend.pages.batch.manage');
+        }
     }
 
     /**
