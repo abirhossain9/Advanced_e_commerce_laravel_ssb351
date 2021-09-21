@@ -32,7 +32,10 @@ class BatchController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.batch.create')
+        $courses = Course::orderBy('english_title','asc')->get();
+        $mentors = Mentor::orderBy('fullname','asc')->get();
+        $branches = Branch::orderBy('name','asc')->get();
+        return view('backend.pages.batch.create',compact('courses','mentors','branches'));
     }
 
     /**
@@ -43,7 +46,24 @@ class BatchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $batch = new Batch();
+
+        $batch->batch_name = $request->batch_name;
+        $batch->slug = Str::slug($request->batch_name);
+        $batch->course_id = $request->course_id;
+        $batch->mentor_id = $request->mentor_id;
+        $batch->branch_id = $request->branch_id;
+        $batch->starting_date = $request->starting_date;
+        $batch->class_day = $request->class_day;
+        $batch->class_timing = $request->class_timing;
+        $batch->fb_group = $request->fb_group;
+        $batch->sit_number = $request->sit_number;
+        $batch->batch_type = $request->batch_type;
+        $batch->admission_status = $request->admission_status;
+        $batch->status = $request->status;
+
+        $batch->save();
+        return redirect()->route('batch.manage')->with('success','New batch added successfully');
     }
 
     /**
