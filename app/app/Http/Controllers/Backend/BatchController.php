@@ -133,6 +133,13 @@ class BatchController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $batch = Batch::find($id);
+        if(!is_null($batch)){
+            $batch->delete();
+            return redirect()->route('batch.manage');
+        }
+        else{
+             return redirect()->route('batch.manage');
+        }
     }
 }
