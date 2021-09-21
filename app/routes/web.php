@@ -45,6 +45,16 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/destroy/{id}','App\Http\Controllers\Backend\BranchController@destroy')->name('branch.destroy');
     });
 
+    //this routes are for batch management
+    Route::group(['prefix' => '/batch'], function(){
+        Route::get('/manage','App\Http\Controllers\Backend\BatchController@index')->name('batch.manage');
+        Route::get('/create','App\Http\Controllers\Backend\BatchController@create')->name('batch.create');
+        Route::post('/store','App\Http\Controllers\Backend\BatchController@store')->name('batch.store');
+        Route::get('/edit/{id}','App\Http\Controllers\Backend\BatchController@edit')->name('batch.edit');
+        Route::post('/update/{id}','App\Http\Controllers\Backend\BatchController@update')->name('batch.update');
+        Route::post('/destroy/{id}','App\Http\Controllers\Backend\BatchController@destroy')->name('batch.destroy');
+    });
+
     //this routes are for mentors profile management
     Route::group(['prefix' => '/mentor'], function(){
         Route::get('/manage','App\Http\Controllers\Backend\MentrorController@index')->name('mentor.manage');
