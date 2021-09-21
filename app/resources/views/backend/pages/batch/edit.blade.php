@@ -16,104 +16,137 @@
             <div class="card bd-0 shadow-base">
                 <div class="pd-25">
 
-                        <form action="{{route('mentor.update',$mentor->id)}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('batch.update',$batch->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label>Full Name</label>
-                                        <input type="text" name="fullname" class="form-control" required="required" value="{{$mentor->fullname}}" autocomplete="off">
+                                    <label>Batch Name</label>
+                                    <input type="text" name="batch_name" class="form-control" value="{{$batch->batch_name}}" required="required" autocomplete="off">
                                     </div>
-                                     <div class="form-group">
-                                        <label>Designation</label>
-                                        <input type="text" name="designation" class="form-control" required="required" value="{{$mentor->designation}}" autocomplete="off">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Address</label>
-                                        <input type="text" name="address" class="form-control" required="required" value="{{$mentor->address}}" autocomplete="off">
-                                    </div>
-                                    <div class="form-group">
-                                    <label>Overview</label>
-                                    <textarea type="text" rows="4" name="overview" class="form-control" required="required" ">{{$mentor->overview}}</textarea>
                                 </div>
-                                </div>
-                                <div class="col-lg-4">
 
+                                <div class="col-lg-3">
                                     <div class="form-group">
-                                         <label>Phone</label>
-                                         <input type="text" name="phone" class="form-control" required="required" autocomplete="off" value="{{$mentor->phone}}">
+                                    <label>Course Name</label>
+                                      <select  name="course_id" class="form-control">
+                                         <option>Please Select a course</option>
+                                           @foreach ($courses as $course)
+                                            <option value="{{$course->id}}" @if ($batch->course_id == $course->id)
+                                                selected
+                                            @endif>{{$course->english_title}}</option>
+                                           @endforeach
+                                      </select>
                                     </div>
+                                </div>
+
+                                <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label>Email Address</label>
-                                        <input type="email" name="email" class="form-control" required="required" autocomplete="off" value="{{$mentor->email}}">
+                                    <label>Mentor Name</label>
+                                    <select  name="mentor_id" class="form-control">
+                                       <option>Please Select a course</option>
+                                         @foreach ($mentors as $mentor)
+                                            <option value="{{$mentor->id}}" @if ($batch->mentor_id == $mentor->id)
+                                                selected
+                                            @endif>{{$mentor->fullname}}</option>
+                                         @endforeach
+                                    </select>
                                     </div>
-                                    <div class="form-gorup">
-                                        <label>Fiverr Url</label>
-                                        <input type="text" name="fiver_url" class="form-control" value="{{$mentor->fiverr_url}}">
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                    <label>Branch Name</label>
+                                    <select  name="branch_id" class="form-control">
+                                        <option>Please Select a course</option>
+                                         @foreach ($branches as $branch)
+                                            <option value="{{$branch->id}}" @if ($batch->branch_id == $branch->id)
+                                                selected
+                                            @endif>{{$branch->name}}</option>
+                                         @endforeach
+                                     </select>
                                     </div>
-                                    <div class="form-gorup">
-                                        <label>Upwork Url</label>
-                                        <input type="text" name="upwork_url" class="form-control" value="{{$mentor->upwork_url}}">
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                    <label>Starting Date</label>
+                                    <input type="text" name="starting_date" value="{{$batch->starting_date}}" class="form-control" required="required" autocomplete="off">
+                                </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                    <label>Class Date</label>
+                                    <input type="text" name="class_day"  value="{{$batch->class_day}}" class="form-control" required="required" autocomplete="off">
+                                </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                     <div class="form-group">
+                                       <label>Class Timing</label>
+                                       <input type="text" name="class_timing" value="{{$batch->class_timing}}" class="form-control" required="required" autocomplete="off">
+                                     </div>
+                                </div>
+                                 <div class="col-lg-3">
+                                    <div class="form-group">
+                                    <label>Facebook Group</label>
+                                    <input type="text" name="fb_group" value="{{$batch->fb_group}}" class="form-control" required="required" autocomplete="off">
                                     </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                    <label>Sit Number</label>
+                                    <input type="number" name="sit_number" value="{{$batch->sit_number}}" class="form-control" required="required" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label>Batch Type</label>
+                                        <select class="form-control" name="batch_type">
+                                            <option value="1">Please Select The Batch Type</option>
+                                            <option value="1" @if ($batch->batch_type==1)
+                                                selected
+                                            @endif >Online Batch</option>
+                                            <option value="2" @if ($batch->batch_type==2)
+                                                selected
+                                            @endif >Offline Batch</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label>Admission Status</label>
+                                        <select class="form-control" name="admission_status">
+                                            <option value="1">Please Select The Admission Status</option>
+                                            <option value="1" @if ($batch->admission_status==1)
+                                                selected
+                                            @endif >Admission Going On</option>
+                                            <option value="2" @if ($batch->admission_status==2)
+                                                selected
+                                            @endif>Admission Closed</option>
+                                        </select>
+                                    </div>
+                                </div><div class="col-lg-3">
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select class="form-control" name="status">
-                                            <option value="1">Please Select The Status</option>
-                                            <option value="1" @if($mentor->status == 1) selected @endif>Active</option>
-                                            <option value="2" @if($mentor->status == 2) selected @endif>Inactive</option>
+                                            <option value="1">Please Select Status</option>
+                                            <option value="1" @if ($batch->status==1)
+                                                selected
+                                            @endif>Active</option>
+                                            <option value="2" @if ($batch->status==2)
+                                                selected
+                                            @endif>Inactive</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-4">
-                                     <div class="form-gorup">
-                                        <label>Profile Picture</label>
-                                          <br>
-                                        @if ($mentor->profile_pic==NULL)
-                                          <img src="{{asset('backend/img/mentor/default.jpg')}}" alt="" width="40">
-                                        @else
-                                          <img src="{{asset('backend/img/mentor/'.$mentor->profile_pic)}}" alt="" width="40">
-
-                                        @endif
-                                    <br><br>
-                                        <input type="file" name="image" class="form-control-file">
-                                    </div>
-
-                                    <div class="form-gorup">
-                                        <br>
-                                        <label>Fiverr Logo</label>
-                                        <br>
-                                        @if ($mentor->fiverr_img==NULL)
-
-                                          no logo uploaded
-                                        @else
-                                          <img src="{{asset('backend/img/mentor/badge/'.$mentor->fiverr_img)}}" alt="" width="40">
-
-                                        @endif
-                                    <br>
-                                        <input type="file" name="fiverr_img" class="form-control-file">
-                                    </div>
-
-                                    <div class="form-gorup">
-                                        <br>
-                                        <label>Upwork Logo</label>
-                                          <br>
-                                        @if ($mentor->upwork_img==NULL)
-                                          no logo uploaded
-                                        @else
-                                          <img src="{{asset('backend/img/mentor/badge/'.$mentor->upwork_img)}}" alt="" width="40">
-
-                                        @endif
-                                    <br>
-                                        <input type="file" name="upwork_img" class="form-control-file">
-                                    </div>
+                                <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="submit" name="updateMentor" value="Update Mentor" class="custom-btn btn btn-teal mg-b-10">
+                                        <input type="submit" name="saveChanges" value="Save Changes" class="custom-btn btn btn-teal mg-b-10">
                                     </div>
-
                                 </div>
-
-
                             </div>
 
                         </form>
