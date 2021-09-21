@@ -24,12 +24,12 @@ class Batch extends Model
         'status'
     ];
     public function course(){
-        return $this->belongsTo('Course::class');
+        return $this->belongsTo(Course::class);
     }
     public function mentor(){
-        return $this->belongsTo('Mentor::class');
+        return $this->belongsTo(Mentor::class);
     }
     public function branch(){
-        return $this->belongsTo('Branch::class');
+        return $this->belongsTo(Branch::class);
     }
 }

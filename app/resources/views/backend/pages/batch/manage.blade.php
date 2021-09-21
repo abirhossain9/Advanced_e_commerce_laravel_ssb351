@@ -49,9 +49,9 @@
                                         <span class="badge badge-warning">Admission Closed</span>
                                         @endif
                                     </td>
-                                    <td>{{$batch->course_id}}</td>
-                                    <td>{{$batch->mentor_id}}</td>
-                                    <td>{{$batch->branch_id}}</td>
+                                    <td>{{$batch->course->english_title}}</td>
+                                    <td>{{$batch->mentor->fullname}}</td>
+                                    <td>{{$batch->branch->name}}</td>
                                     <td>{{$batch->starting_date}}</td>
                                     <td>
                                         @if ($batch->batch_type==1)
@@ -60,7 +60,6 @@
                                         <span class="badge badge-dark">Offline Batch</span>
                                         @endif
                                     </td>
-                                    <td>{{$batch->address}}</td>
                                     <td>
                                         @if ($batch->status==1)
                                         <span class="badge badge-success">active</span>
@@ -102,7 +101,7 @@
                                                     <div class="modal-button text-center">
                                                         <ul>
                                                             <li>
-                                                                <form action="{{route('batch.destroy',$mentor->id)}}" method="POST">
+                                                                <form action="{{route('batch.destroy',$batch->id)}}" method="POST">
                                                                     @csrf
                                                                     <button type="submit" class="btn btn-danger">Confirm</button>
                                                                 </form>
