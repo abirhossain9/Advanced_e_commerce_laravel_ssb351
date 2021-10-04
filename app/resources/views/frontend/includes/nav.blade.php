@@ -14,10 +14,10 @@
 
                             <ul class="navbar-nav">
                                 <li class="nav-item active">
-                                    <a class="nav-link section-scroll" href="index.html">Home</a>
+                                    <a class="nav-link section-scroll" href="{{route('home')}}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link section-scroll" href="courses.html">Courses</a>
+                                    <a class="nav-link section-scroll" href="{{route('home')}}">Courses</a>
                                 </li>
                                 <li class="nav-item">
                                     <a data-scroll="" class="nav-link section-scroll" href="">About Us</a>
