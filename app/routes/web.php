@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/','App\Http\Controllers\frontend\PagesController@index')->name('home');
 
 
 /*
@@ -28,9 +28,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/dashboard', 'App\Http\Controllers\Backend\DashboardController@dashboard') ->name('admin.dashboard');
