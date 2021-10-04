@@ -79,14 +79,20 @@
                                     <h2 class="sec-title">Banani Branch Offered Courses</h2>
                                     <!-- Banani Courses End -->
                                     <div class="row">
-                                        <!-- Course Start -->
-                                        <div class="col-md-4">
-                                            <!-- Course List Start -->
-                                            <div class="course-item">
+                                        @foreach ($batches as $batch )
+                                           @if ( $batch->branch_id == 2)
+                                               <!-- Course Start -->
+                                               <div class="col-md-4">
+                                               <!-- Course List Start -->
+                                               <div class="course-item">
                                                 <div class="course-item-img">
+                                                    @if($batch->batch_type == 1)
+                                                    <div class="coutse-type-online">Online</div>
+                                                    @elseif($batch->batch_type == 2)
                                                     <div class="coutse-type-offline">Offline</div>
+                                                    @endif
                                                     <a href="">
-                                                        <img src="{{asset('frontend/assets/images/webdev.png')}}" alt="">
+                                                        <img src="{{asset('backend/img/course/'.$batch->course->image)}}" alt="">
                                                     </a>
                                                     <a href="" class="course-link">+</a>
                                                 </div>
@@ -94,21 +100,21 @@
                                                 <div class="course-summary box">
 
                                                     <div class="course-summary-inner">
-                                                        <h4>ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট</h4>
+                                                        <h4>{{$batch->course->english_title}}</h4>
                                                         <ul class="course-meta">
                                                             <li>
                                                                 <span>Mentor: </span>
-                                                                <span class="green-highlight">Faisal Hamid Hemel</span>
+                                                                <span class="green-highlight">{{$batch->mentor->fullname}}</span>
                                                             </li>
                                                             <li>
                                                                 <span>Classes: </span>
-                                                                <span class="blue-highlight">24</span>
+                                                                <span class="blue-highlight">{{$batch->course->total_lecture}}</span>
                                                                 <span>Hours: </span>
-                                                                <span class="blue-highlight">96</span>
+                                                                <span class="blue-highlight">{{$batch->course->class_hour}}</span>
                                                             </li>
                                                             <li>
                                                                 <span>Seats Left: </span>
-                                                                <span class="blue-highlight">50</span>
+                                                                <span class="blue-highlight">{{$batch->sit_number}}</span>
                                                             </li>
                                                         </ul>
 
@@ -116,286 +122,188 @@
                                                     </div>
                                                 </div>
 
-                                            </div>
-                                            <!-- Course List End -->
-                                        </div>
-                                        <!-- Course End -->
+                                               </div>
+                                               <!-- Course List End -->
+                                               </div>
+                                               <!-- Course End -->
+                                            @endif
+                                        @endforeach
 
                                     </div>
                                     <!-- Row End -->
 
-                                    <!-- Banani Courses Start -->
+                                    <!-- Mirpur Courses Start -->
                                     <h2 class="sec-title">Mirpur Branch Offered Courses</h2>
                                     <!-- Banani Courses End -->
                                     <div class="row">
-                                        <!-- Course Start -->
-                                        <div class="col-md-4">
+                                        @foreach ($batches as $batch )
+                                        @if ( $batch->branch_id == 1)
+                                            <!-- Course Start -->
+                                            <div class="col-md-4">
                                             <!-- Course List Start -->
                                             <div class="course-item">
-                                                <div class="course-item-img">
-                                                    <div class="coutse-type-offline">Offline</div>
-                                                    <a href="">
-                                                        <img src="{{asset('frontend/assets/images/webdev.png')}}" alt="">
-                                                    </a>
-                                                    <a href="" class="course-link">+</a>
-                                                </div>
+                                             <div class="course-item-img">
+                                                 @if($batch->batch_type == 1)
+                                                 <div class="coutse-type-online">Online</div>
+                                                 @elseif($batch->batch_type == 2)
+                                                 <div class="coutse-type-offline">Offline</div>
+                                                 @endif
+                                                 <a href="">
+                                                     <img src="{{asset('backend/img/course/'.$batch->course->image)}}" alt="">
+                                                 </a>
+                                                 <a href="" class="course-link">+</a>
+                                             </div>
 
-                                                <div class="course-summary box">
+                                             <div class="course-summary box">
 
-                                                    <div class="course-summary-inner">
-                                                        <h4>ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট</h4>
-                                                        <ul class="course-meta">
-                                                            <li>
-                                                                <span>Mentor: </span>
-                                                                <span class="green-highlight">Faisal Hamid Hemel</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Classes: </span>
-                                                                <span class="blue-highlight">24</span>
-                                                                <span>Hours: </span>
-                                                                <span class="blue-highlight">96</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Seats Left: </span>
-                                                                <span class="blue-highlight">50</span>
-                                                            </li>
-                                                        </ul>
+                                                 <div class="course-summary-inner">
+                                                     <h4>{{$batch->course->english_title}}</h4>
+                                                     <ul class="course-meta">
+                                                         <li>
+                                                             <span>Mentor: </span>
+                                                             <span class="green-highlight">{{$batch->mentor->fullname}}</span>
+                                                         </li>
+                                                         <li>
+                                                             <span>Classes: </span>
+                                                             <span class="blue-highlight">{{$batch->course->total_lecture}}</span>
+                                                             <span>Hours: </span>
+                                                             <span class="blue-highlight">{{$batch->course->class_hour}}</span>
+                                                         </li>
+                                                         <li>
+                                                             <span>Seats Left: </span>
+                                                             <span class="blue-highlight">{{$batch->sit_number}}</span>
+                                                         </li>
+                                                     </ul>
 
-                                                        <a href="" class="btn btn-entroll">Enroll Now</a>
-                                                    </div>
-                                                </div>
+                                                     <a href="" class="btn btn-entroll">Enroll Now</a>
+                                                 </div>
+                                             </div>
 
                                             </div>
                                             <!-- Course List End -->
-                                        </div>
-                                        <!-- Course End -->
-
-                                        <!-- Course Start -->
-                                        <div class="col-md-4">
-                                            <!-- Course List Start -->
-                                            <div class="course-item">
-                                                <div class="course-item-img">
-                                                    <div class="coutse-type-online">Offline</div>
-                                                    <a href="">
-                                                        <img src="{{asset('frontend/assets/images/webdev.png')}}" alt="">
-                                                    </a>
-                                                    <a href="" class="course-link">+</a>
-                                                </div>
-
-                                                <div class="course-summary box">
-
-                                                    <div class="course-summary-inner">
-                                                        <h4>ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট</h4>
-                                                        <ul class="course-meta">
-                                                            <li>
-                                                                <span>Mentor: </span>
-                                                                <span class="green-highlight">Faisal Hamid Hemel</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Classes: </span>
-                                                                <span class="blue-highlight">24</span>
-                                                                <span>Hours: </span>
-                                                                <span class="blue-highlight">96</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Seats Left: </span>
-                                                                <span class="blue-highlight">50</span>
-                                                            </li>
-                                                        </ul>
-
-                                                        <a href="" class="btn btn-entroll">Enroll Now</a>
-                                                    </div>
-                                                </div>
-
                                             </div>
-                                            <!-- Course List End -->
-                                        </div>
-                                        <!-- Course End -->
+                                            <!-- Course End -->
+                                         @endif
+                                     @endforeach
                                     </div>
                                     <!-- Row End -->
 
                                 </div>
 
                                 <div class="tab-pane fade" id="banani" role="tabpanel" aria-labelledby="banani-tab">
-                                    <!-- Banani Courses Start -->
-                                    <h2 class="sec-title">Banani Branch Offered Courses</h2>
-                                    <!-- Banani Courses End -->
-                                    <div class="row">
-                                        <!-- Course Start -->
-                                        <div class="col-md-4">
-                                            <!-- Course List Start -->
-                                            <div class="course-item">
-                                                <div class="course-item-img">
-                                                    <div class="coutse-type-offline">Offline</div>
-                                                    <a href="">
-                                                        <img src="{{asset('frontend/assets/images/webdev.png')}}" alt="">
-                                                    </a>
-                                                    <a href="" class="course-link">+</a>
+                                     <!-- Banani Courses Start -->
+                                     <h2 class="sec-title">Banani Branch Offered Courses</h2>
+                                     <!-- Banani Courses End -->
+                                     <div class="row">
+                                         @foreach ($batches as $batch )
+                                            @if ( $batch->branch_id == 2)
+                                                <!-- Course Start -->
+                                                <div class="col-md-4">
+                                                <!-- Course List Start -->
+                                                <div class="course-item">
+                                                 <div class="course-item-img">
+                                                     @if($batch->batch_type == 1)
+                                                     <div class="coutse-type-online">Online</div>
+                                                     @elseif($batch->batch_type == 2)
+                                                     <div class="coutse-type-offline">Offline</div>
+                                                     @endif
+                                                     <a href="">
+                                                         <img src="{{asset('backend/img/course/'.$batch->course->image)}}" alt="">
+                                                     </a>
+                                                     <a href="" class="course-link">+</a>
+                                                 </div>
+
+                                                 <div class="course-summary box">
+
+                                                     <div class="course-summary-inner">
+                                                         <h4>{{$batch->course->english_title}}</h4>
+                                                         <ul class="course-meta">
+                                                             <li>
+                                                                 <span>Mentor: </span>
+                                                                 <span class="green-highlight">{{$batch->mentor->fullname}}</span>
+                                                             </li>
+                                                             <li>
+                                                                 <span>Classes: </span>
+                                                                 <span class="blue-highlight">{{$batch->course->total_lecture}}</span>
+                                                                 <span>Hours: </span>
+                                                                 <span class="blue-highlight">{{$batch->course->class_hour}}</span>
+                                                             </li>
+                                                             <li>
+                                                                 <span>Seats Left: </span>
+                                                                 <span class="blue-highlight">{{$batch->sit_number}}</span>
+                                                             </li>
+                                                         </ul>
+
+                                                         <a href="" class="btn btn-entroll">Enroll Now</a>
+                                                     </div>
+                                                 </div>
+
                                                 </div>
-
-                                                <div class="course-summary box">
-
-                                                    <div class="course-summary-inner">
-                                                        <h4>ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট</h4>
-                                                        <ul class="course-meta">
-                                                            <li>
-                                                                <span>Mentor: </span>
-                                                                <span class="green-highlight">Faisal Hamid Hemel</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Classes: </span>
-                                                                <span class="blue-highlight">24</span>
-                                                                <span>Hours: </span>
-                                                                <span class="blue-highlight">96</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Seats Left: </span>
-                                                                <span class="blue-highlight">50</span>
-                                                            </li>
-                                                        </ul>
-
-                                                        <a href="" class="btn btn-entroll">Enroll Now</a>
-                                                    </div>
+                                                <!-- Course List End -->
                                                 </div>
+                                                <!-- Course End -->
+                                             @endif
+                                         @endforeach
 
-                                            </div>
-                                            <!-- Course List End -->
-                                        </div>
-                                        <!-- Course End -->
-
-                                        <!-- Course Start -->
-                                        <div class="col-md-4">
-                                            <!-- Course List Start -->
-                                            <div class="course-item">
-                                                <div class="course-item-img">
-                                                    <div class="coutse-type-online">Offline</div>
-                                                    <a href="">
-                                                        <img src="{{asset('frontend/assets/images/webdev.png')}}" alt="">
-                                                    </a>
-                                                    <a href="" class="course-link">+</a>
-                                                </div>
-
-                                                <div class="course-summary box">
-
-                                                    <div class="course-summary-inner">
-                                                        <h4>ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট</h4>
-                                                        <ul class="course-meta">
-                                                            <li>
-                                                                <span>Mentor: </span>
-                                                                <span class="green-highlight">Faisal Hamid Hemel</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Classes: </span>
-                                                                <span class="blue-highlight">24</span>
-                                                                <span>Hours: </span>
-                                                                <span class="blue-highlight">96</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Seats Left: </span>
-                                                                <span class="blue-highlight">50</span>
-                                                            </li>
-                                                        </ul>
-
-                                                        <a href="" class="btn btn-entroll">Enroll Now</a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <!-- Course List End -->
-                                        </div>
-                                        <!-- Course End -->
-                                    </div>
-                                    <!-- Row End -->
+                                     </div>
+                                     <!-- Row End -->
                                 </div>
 
                                 <div class="tab-pane fade" id="mirpur" role="tabpanel" aria-labelledby="mirpur-tab">
                                     <!-- Mirpur Courses Start -->
+                                    <!-- Mirpur Courses Start -->
                                     <h2 class="sec-title">Mirpur Branch Offered Courses</h2>
-                                    <!-- Mirpur Courses End -->
+                                    <!-- Banani Courses End -->
                                     <div class="row">
-                                        <!-- Course Start -->
-                                        <div class="col-md-4">
+                                        @foreach ($batches as $batch )
+                                        @if ( $batch->branch_id == 1)
+                                            <!-- Course Start -->
+                                            <div class="col-md-4">
                                             <!-- Course List Start -->
                                             <div class="course-item">
-                                                <div class="course-item-img">
-                                                    <div class="coutse-type-offline">Offline</div>
-                                                    <a href="">
-                                                        <img src="{{asset('frontend/assets/images/webdev.png')}}" alt="">
-                                                    </a>
-                                                    <a href="" class="course-link">+</a>
-                                                </div>
+                                             <div class="course-item-img">
+                                                 @if($batch->batch_type == 1)
+                                                 <div class="coutse-type-online">Online</div>
+                                                 @elseif($batch->batch_type == 2)
+                                                 <div class="coutse-type-offline">Offline</div>
+                                                 @endif
+                                                 <a href="">
+                                                     <img src="{{asset('backend/img/course/'.$batch->course->image)}}" alt="">
+                                                 </a>
+                                                 <a href="" class="course-link">+</a>
+                                             </div>
 
-                                                <div class="course-summary box">
+                                             <div class="course-summary box">
 
-                                                    <div class="course-summary-inner">
-                                                        <h4>ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট</h4>
-                                                        <ul class="course-meta">
-                                                            <li>
-                                                                <span>Mentor: </span>
-                                                                <span class="green-highlight">Faisal Hamid Hemel</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Classes: </span>
-                                                                <span class="blue-highlight">24</span>
-                                                                <span>Hours: </span>
-                                                                <span class="blue-highlight">96</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Seats Left: </span>
-                                                                <span class="blue-highlight">50</span>
-                                                            </li>
-                                                        </ul>
+                                                 <div class="course-summary-inner">
+                                                     <h4>{{$batch->course->english_title}}</h4>
+                                                     <ul class="course-meta">
+                                                         <li>
+                                                             <span>Mentor: </span>
+                                                             <span class="green-highlight">{{$batch->mentor->fullname}}</span>
+                                                         </li>
+                                                         <li>
+                                                             <span>Classes: </span>
+                                                             <span class="blue-highlight">{{$batch->course->total_lecture}}</span>
+                                                             <span>Hours: </span>
+                                                             <span class="blue-highlight">{{$batch->course->class_hour}}</span>
+                                                         </li>
+                                                         <li>
+                                                             <span>Seats Left: </span>
+                                                             <span class="blue-highlight">{{$batch->sit_number}}</span>
+                                                         </li>
+                                                     </ul>
 
-                                                        <a href="" class="btn btn-entroll">Enroll Now</a>
-                                                    </div>
-                                                </div>
+                                                     <a href="" class="btn btn-entroll">Enroll Now</a>
+                                                 </div>
+                                             </div>
 
                                             </div>
                                             <!-- Course List End -->
-                                        </div>
-                                        <!-- Course End -->
-
-                                        <!-- Course Start -->
-                                        <div class="col-md-4">
-                                            <!-- Course List Start -->
-                                            <div class="course-item">
-                                                <div class="course-item-img">
-                                                    <div class="coutse-type-online">Offline</div>
-                                                    <a href="">
-                                                        <img src="{{asset('frontend/assets/images/webdev.png')}}" alt="">
-                                                    </a>
-                                                    <a href="" class="course-link">+</a>
-                                                </div>
-
-                                                <div class="course-summary box">
-
-                                                    <div class="course-summary-inner">
-                                                        <h4>ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট</h4>
-                                                        <ul class="course-meta">
-                                                            <li>
-                                                                <span>Mentor: </span>
-                                                                <span class="green-highlight">Faisal Hamid Hemel</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Classes: </span>
-                                                                <span class="blue-highlight">24</span>
-                                                                <span>Hours: </span>
-                                                                <span class="blue-highlight">96</span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Seats Left: </span>
-                                                                <span class="blue-highlight">50</span>
-                                                            </li>
-                                                        </ul>
-
-                                                        <a href="" class="btn btn-entroll">Enroll Now</a>
-                                                    </div>
-                                                </div>
-
                                             </div>
-                                            <!-- Course List End -->
-                                        </div>
-                                        <!-- Course End -->
+                                            <!-- Course End -->
+                                         @endif
+                                     @endforeach
                                     </div>
                                     <!-- Row End -->
                                 </div>

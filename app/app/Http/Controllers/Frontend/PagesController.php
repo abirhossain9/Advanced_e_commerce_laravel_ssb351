@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Models\Backend\Batch;
+use App\Models\Backend\Branch;
+use App\Models\Backend\Course;
+use App\Models\Backend\Mentor;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +18,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-        return view('frontend.pages.homepage');
+        $batches = Batch::orderBy('id','desc')->get();
+
+        return view('frontend.pages.homepage',compact('batches'));
     }
 
     /**
