@@ -136,7 +136,7 @@ class CourseController extends Controller
             $img = rand() . '.' . $image->getClientOriginalExtension();
             $location = public_path('backend/img/course/'.$img);
             Image::make($image)->save($location);
-            $course->profile_pic = $img;
+            $course->image = $img;
         }
         $course->save();
         return redirect()->route('course.manage');
