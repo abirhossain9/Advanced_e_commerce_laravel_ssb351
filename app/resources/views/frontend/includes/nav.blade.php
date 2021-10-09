@@ -40,7 +40,7 @@
 
                         <div class="ml-auto ml-auto-mobile top-bar">
 
-                            <a href=""><i class="icofont-ui-user"></i>Login / Signup</a>
+                            <a href="{{route('login')}}"><i class="icofont-ui-user"></i>Login / Signup</a>
                             <a href=""><i class="icofont-support"></i>Get Support</a>
 
                         </div>
