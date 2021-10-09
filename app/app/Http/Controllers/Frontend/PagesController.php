@@ -24,6 +24,16 @@ class PagesController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function coursedetails()
+    {
+        return view('frontend.pages.courseDetails');
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
