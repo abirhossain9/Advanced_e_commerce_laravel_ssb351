@@ -7,6 +7,7 @@ use App\Models\Backend\Branch;
 use App\Models\Backend\Course;
 use App\Models\Backend\Mentor;
 use App\Http\Controllers\Controller;
+use Dotenv\Util\Str;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -28,9 +29,12 @@ class PagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function coursedetails()
+    public function coursedetails($slug)
     {
-        return view('frontend.pages.courseDetails');
+        $batch = Batch::orderBy('id','asc')->where('slug',$slug)->first();
+        if(!empty($batch)){
+            return view('frontend.pages.courseDetails',compact('batch'));
+        }
     }
 
     /**
