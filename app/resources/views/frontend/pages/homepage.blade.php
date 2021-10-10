@@ -91,10 +91,10 @@
                                                     @elseif($batch->batch_type == 2)
                                                     <div class="coutse-type-offline">Offline</div>
                                                     @endif
-                                                    <a href="">
+                                                    <a href="{{route('course.details',$batch->slug)}}">
                                                         <img src="{{asset('backend/img/course/'.$batch->course->image)}}" alt="">
                                                     </a>
-                                                    <a href="" class="course-link">+</a>
+                                                    <a href="{{route('course.details',$batch->slug)}}" class="course-link">+</a>
                                                 </div>
 
                                                 <div class="course-summary box">
@@ -118,7 +118,7 @@
                                                             </li>
                                                         </ul>
 
-                                                        <a href="" class="btn btn-entroll">Enroll Now</a>
+                                                        <a href="{{route('course.details',$batch->slug)}}" class="btn btn-entroll">Enroll Now</a>
                                                     </div>
                                                 </div>
 
@@ -148,10 +148,10 @@
                                                  @elseif($batch->batch_type == 2)
                                                  <div class="coutse-type-offline">Offline</div>
                                                  @endif
-                                                 <a href="">
+                                                 <a href="{{route('course.details',$batch->slug)}}">
                                                      <img src="{{asset('backend/img/course/'.$batch->course->image)}}" alt="">
                                                  </a>
-                                                 <a href="" class="course-link">+</a>
+                                                 <a href="{{route('course.details',$batch->slug)}}" class="course-link">+</a>
                                              </div>
 
                                              <div class="course-summary box">
@@ -175,7 +175,7 @@
                                                          </li>
                                                      </ul>
 
-                                                     <a href="" class="btn btn-entroll">Enroll Now</a>
+                                                     <a href="{{route('course.details',$batch->slug)}}" class="btn btn-entroll">Enroll Now</a>
                                                  </div>
                                              </div>
 
@@ -207,10 +207,10 @@
                                                      @elseif($batch->batch_type == 2)
                                                      <div class="coutse-type-offline">Offline</div>
                                                      @endif
-                                                     <a href="">
+                                                     <a href="{{route('course.details',$batch->slug)}}">
                                                          <img src="{{asset('backend/img/course/'.$batch->course->image)}}" alt="">
                                                      </a>
-                                                     <a href="" class="course-link">+</a>
+                                                     <a href="{{route('course.details',$batch->slug)}}" class="course-link">+</a>
                                                  </div>
 
                                                  <div class="course-summary box">
@@ -234,7 +234,7 @@
                                                              </li>
                                                          </ul>
 
-                                                         <a href="" class="btn btn-entroll">Enroll Now</a>
+                                                         <a href="{{route('course.details',$batch->slug)}}" class="btn btn-entroll">Enroll Now</a>
                                                      </div>
                                                  </div>
 
@@ -267,10 +267,10 @@
                                                  @elseif($batch->batch_type == 2)
                                                  <div class="coutse-type-offline">Offline</div>
                                                  @endif
-                                                 <a href="">
+                                                 <a href="{{route('course.details',$batch->slug)}}">
                                                      <img src="{{asset('backend/img/course/'.$batch->course->image)}}" alt="">
                                                  </a>
-                                                 <a href="" class="course-link">+</a>
+                                                 <a href="{{route('course.details',$batch->slug)}}" class="course-link">+</a>
                                              </div>
 
                                              <div class="course-summary box">
@@ -294,7 +294,7 @@
                                                          </li>
                                                      </ul>
 
-                                                     <a href="" class="btn btn-entroll">Enroll Now</a>
+                                                     <a href="{{route('course.details',$batch->slug)}}" class="btn btn-entroll">Enroll Now</a>
                                                  </div>
                                              </div>
 
