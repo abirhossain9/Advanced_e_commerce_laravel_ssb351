@@ -1,0 +1,1452 @@
+/* GLobal CSS */
+@import url("https://fonts.maateen.me/kalpurush/font.css");
+
+body {
+    font-family: "Kalpurush", Arial, sans-serif !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Kalpurush", sans-serif;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+a:hover {
+    text-decoration: none;
+}
+.blue-shadow {
+    background: rgba(0, 174, 239, 0.1);
+    color: #00aeef;
+    padding: 10px 30px;
+}
+.green-shadow {
+    background: rgba(43, 182, 115, 0.1);
+    color: #2bb673;
+    padding: 10px 30px;
+}
+.mt-50 {
+    margin-top: 50px;
+}
+.mt-35 {
+    margin-top: 35px;
+}
+
+/* Header Section CSS */
+.ln-header {
+    height: 100vh;
+    padding: 20px 0;
+}
+.logo {
+    width: 125px;
+    height: auto;
+}
+.navbar-light .navbar-nav .nav-link {
+    padding: 15px 30px;
+    color: #414141;
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+}
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+    color: #00aeef;
+}
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #00aeef;
+}
+.btn-header {
+    background: #00aeef;
+    color: #fff !important;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+.btn-header:hover {
+    background: #2bb673;
+}
+.desk-hidden {
+    display: none;
+}
+/* Banner Section CSS */
+.landing-banner {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.landing-banner h1 {
+    font-size: 54px;
+    color: #00aeef;
+    line-height: 1em;
+    font-weight: 700;
+}
+.landing-banner h1 span {
+    display: block;
+}
+.ln-course-info {
+    margin: 30px 0;
+}
+.ln-course-info ul li {
+    list-style: none;
+    font-size: 28px;
+    line-height: 1.3em;
+    color: #00aeef;
+}
+.ln-course-info ul li span {
+    color: #2bb673;
+}
+.landing-banner p {
+    margin-bottom: 50px;
+}
+.ln-banner-btn ul li {
+    list-style: none;
+    display: inline;
+    margin-right: 20px;
+}
+.ln-banner-btn ul li .btn-banner-one {
+    background: #00aeef;
+    border: 1px solid #00aeef;
+    font-size: 22px;
+    color: #fff;
+    padding: 15px 40px;
+    transition: 0.3s ease-in-out;
+}
+.ln-banner-btn ul li .btn-banner-one:hover {
+    text-decoration: none;
+    background: #2bb673;
+}
+.ln-banner-btn ul li .btn-banner-two {
+    background: #fff;
+    border: 1px solid #00aeef;
+    font-size: 22px;
+    color: #00aeef;
+    padding: 15px 40px;
+    transition: 0.3s ease-in-out;
+}
+.ln-banner-btn ul li .btn-banner-two:hover {
+    text-decoration: none;
+    border: 1px solid #2bb673;
+    background: #2bb673;
+    color: #fff;
+}
+.landing-banner img {
+    object-fit: contain;
+}
+
+/* Landing Page Tab Section CSS */
+.ln-tab-area {
+    /*position: relative;*/
+    background: #f7fdff;
+    padding: 100px 0;
+}
+.checking-sticy {
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 0px !important;
+    display: block;
+}
+/* Tab Option Panel CSS */
+div.ln-tab-panel {
+    background: #fff;
+    padding: 40px 25px;
+    box-shadow: 0px 0px 6px 0px #e8e8e8;
+    text-align: center;
+}
+.tab-logo {
+    width: 125px;
+    height: auto;
+}
+.ln-tab-options {
+    margin: 50px 0;
+}
+.ln-tab-options ul li {
+    list-style: none;
+    transition: 0.3s ease-in-out;
+}
+.ln-tab-options ul li a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6c6c6c;
+    line-height: 2.7em;
+}
+.ln-tab-options ul li a:hover {
+    color: #00aeef;
+}
+.ln-tab-options ul li a.active {
+    color: #00aeef;
+}
+.tab-btn {
+    background: #00aeef;
+    border: 1px solid #00aeef;
+    font-size: 22px;
+    color: #fff;
+    padding: 15px 40px;
+    transition: 0.3s ease-in-out;
+}
+.tab-btn:hover {
+    text-decoration: none;
+    background: #2bb673;
+    color: #fff;
+}
+
+/* =====================
+Course Details Section
+====================== */
+.ln-course-details h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.ln-course-details p {
+    margin: 50px 0;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+.ln-course-details-video {
+    position: relative;
+}
+.ln-course-details-video-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.7);
+}
+.ln-course-details-video-hover p {
+    text-align: left;
+    color: #fff;
+    font-size: 20px;
+    margin: 13px 40px;
+}
+.ln-course-details-video-hover p .fa {
+    width: 55px;
+    height: 55px;
+    background: #fff;
+    line-height: 55px;
+    border-radius: 50%;
+    margin-right: 20px;
+    padding-left: 5px;
+    text-align: center;
+    color: #2bb673;
+    font-size: 22px;
+}
+.ln-course-details-video-hover p .fa:hover {
+    cursor: pointer;
+}
+.ln-course-details-summary {
+    border-left: 2px dashed rgba(0, 174, 239, 0.1);
+    padding-left: 20px;
+}
+.ln-course-details-summary h2 {
+    font-size: 40px;
+    color: #00aeef;
+    margin-bottom: 0;
+}
+.ln-course-details-summary h4 {
+    font-size: 24px;
+    color: #6c6c6c;
+    margin-bottom: 25px;
+}
+
+/* ======================
+Course Curriculum Section
+======================= */
+.ln-course-curriculum-section {
+    padding: 100px 0;
+    background: #fff;
+}
+.ln-course-curriculum-section h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.ln-course-curriculum-section p {
+    margin: 50px 0;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+
+.process-wrapper {
+    margin: auto;
+    max-width: 100%;
+}
+#progress-bar-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    height: 100px;
+    margin-top: 60px;
+}
+#progress-bar-container ul {
+    padding: 0;
+    margin: 0;
+    padding-top: 15px;
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+}
+#progress-bar-container li {
+    list-style: none;
+    float: left;
+    width: 20%;
+    text-align: center;
+    color: #6c6c6c;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all ease 0.2s;
+    vertical-align: bottom;
+    position: relative;
+    height: 60px;
+}
+#progress-bar-container li .step-inner {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    font-size: 25px;
+    font-weight: 500;
+}
+#progress-bar-container li.active,
+#progress-bar-container li:hover {
+    color: #2bb673;
+}
+#progress-bar-container li .step-inner p {
+    margin-top: 40px;
+    color: #6c6c6c;
+}
+#progress-bar-container li.active p,
+#progress-bar-container li:hover p {
+    color: #6c6c6c;
+}
+#progress-bar-container #line {
+    width: 90%;
+    margin: auto;
+    background-color: #eef0f1;
+    height: 3px;
+    position: absolute;
+    left: 5%;
+    top: 75px;
+    z-index: 1;
+    border-radius: 50px;
+    transition: all ease 0.9s;
+}
+#progress-bar-container #line-progress {
+    content: "";
+    position: absolute;
+    width: 4%;
+    height: 14px;
+    background: #2bb673;
+    background: linear-gradient(to right, #2bb673 0%, #2bb673 100%);
+    z-index: 2;
+    border-radius: 0;
+    transition: all ease 0.9s;
+    top: -6px;
+}
+.progress-percent-counter {
+    width: 100%;
+    margin-left: 1.5%;
+}
+.progress-percent-counter ul {
+    margin: 0;
+    padding-top: 0;
+}
+.progress-percent-counter ul li {
+    list-style: none;
+    display: inline-block;
+    width: 19%;
+    color: #dad0d0;
+    text-align: center;
+}
+#progress-content-section {
+    width: 100%;
+    margin: auto;
+    background: #fff;
+}
+#progress-content-section .section-content {
+    padding: 30px 40px;
+    text-align: center;
+}
+#progress-content-section .section-content h3 {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: #2bb673;
+    letter-spacing: 0px;
+}
+#progress-content-section .section-content p {
+    font-size: 16px;
+    line-height: 1.8em;
+    color: #777;
+    margin-top: 20px;
+}
+#progress-content-section .section-content {
+    display: none;
+    animation: FadeInUp 700ms ease 1;
+    animation-fill-mode: forwards;
+    transform: translateY(15px);
+    opacity: 0;
+    text-align: left;
+}
+#progress-content-section .section-content.active {
+    display: block;
+}
+@keyframes FadeInUp {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* ============================
+Course For Whoom Section Start
+============================= */
+.course-for-whoom {
+    padding: 100px 0;
+    background-color: #f7fdff;
+}
+.course-for-whoom h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.course-for-whoom p {
+    margin: 50px 0;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+.faq-qa h3 {
+    font-size: 26px;
+    color: #00aeef;
+}
+.faq-qa p {
+    margin: 15px 0 35px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.image-one {
+    width: 250px;
+    z-index: 0;
+    position: relative;
+}
+.image-two {
+    float: right;
+    width: 250px;
+    margin-top: -60px;
+    border: 10px solid #fff;
+    z-index: 1;
+    position: relative;
+}
+.image-three {
+    width: 250px;
+    margin-top: -60px;
+    border: 10px solid #fff;
+    z-index: 2;
+    position: relative;
+}
+
+/* ============================
+= Landing Page Support System
+============================= */
+.std-support-system {
+    padding: 100px 0;
+    background-color: #fff;
+}
+.std-support-system h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.std-support-system p {
+    margin: 50px 0 75px;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+.std-support-system-content {
+    margin-bottom: 10px;
+}
+.std-support-system-content h3 {
+    font-size: 26px;
+    color: #6c6c6c;
+}
+.std-support-system-content p {
+    margin: 20px 0;
+    color: #6c6c6c;
+}
+
+/* ==============================
+= Landing Student Success Stories
+=============================== */
+.ln-std-success-stories {
+    padding: 100px 0;
+    background-color: #f7fdff;
+}
+.ln-std-success-stories h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.ln-std-success-stories p {
+    margin: 50px 0;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+.slider-content h2 {
+    color: #2bb673;
+    font-size: 34px;
+    margin-top: 20px;
+}
+.slider-content h3 {
+    color: #6c6c6c;
+    font-size: 22px;
+}
+.slider-content h3 span {
+    color: #00aeef;
+}
+.slider-content .fa {
+    color: #2bb673;
+    opacity: 0.5;
+    font-size: 42px;
+    margin-right: 15px;
+}
+
+.slider-content p {
+    margin: 20px 0 40px;
+    width: 95%;
+}
+.btn-slider {
+    background: #2bb673;
+    border: 1px solid #2bb673;
+    font-size: 22px;
+    color: #fff;
+    padding: 15px 40px;
+    transition: 0.3s ease-in-out;
+}
+.btn-slider:hover {
+    background: #00aeef;
+    border: 1px solid #00aeef;
+    color: #fff;
+}
+.owl-nav .owl-prev {
+    position: absolute;
+    left: -45px;
+    top: 40%;
+    font-size: 36px !important;
+    width: 55px;
+    height: 55px;
+    background: #2bb673 !important;
+    color: #fff !important;
+}
+.owl-nav .owl-next {
+    position: absolute;
+    right: -45px;
+    top: 40%;
+    font-size: 36px !important;
+    width: 55px;
+    height: 55px;
+    background: #2bb673 !important;
+    color: #fff !important;
+}
+.ln-std-success-stories .owl-carousel .owl-stage-outer {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* ==============================
+= Landing Where Students Worked
+=============================== */
+.where-students-worked {
+    padding: 100px 0;
+    background-color: #fff;
+}
+.where-students-worked h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.where-students-worked p {
+    margin: 50px 0;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+.std-working-at img {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+}
+.std-working-at h3 {
+    font-size: 26px;
+    color: #6c6c6c;
+}
+.std-working-at p {
+    margin: 10px 0 0;
+    color: #6c6c6c;
+}
+
+/* ============================
+= Landing News Coverage Section
+=============================== */
+.ln-news-coverage {
+    padding: 100px 0;
+    background: #f7fdff;
+}
+.ln-news-coverage h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.ln-news-coverage p {
+    margin: 50px 0;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+.newspaper-logo {
+    width: 200px !important;
+    height: auto;
+    margin-bottom: 25px;
+}
+.news-coverage-thumbnail {
+    position: relative;
+}
+.news-coverage-thumbnail-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px 20px;
+}
+.news-coverage-thumbnail-hover h2 {
+    color: #fff;
+    font-size: 30px;
+}
+.btn-news {
+    background: #00aeef;
+    border: 1px solid #00aeef;
+    font-size: 22px;
+    color: #fff;
+    padding: 15px 40px;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    right: 15px;
+    top: 18px;
+}
+.btn-news:hover {
+    background: #2bb673;
+    border: 1px solid #2bb673;
+    color: #fff;
+}
+
+.news-slider .owl-nav .owl-prev {
+    position: absolute;
+    left: -45px;
+    top: 50%;
+    font-size: 36px !important;
+    width: 55px;
+    height: 55px;
+    background: #2bb673 !important;
+    color: #fff !important;
+}
+.news-slider .owl-nav .owl-next {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    font-size: 36px !important;
+    width: 55px;
+    height: 55px;
+    background: #2bb673 !important;
+    color: #fff !important;
+}
+
+/* ============================
+= Landing Page Course Mentor
+=============================== */
+.ln-course-mentor {
+    padding: 100px 0;
+    background: #fff;
+}
+.ln-course-mentor h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.ln-course-mentor p {
+    margin: 50px 0;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+.ln-course-mentor-info {
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+}
+.ln-course-mentor-content {
+    padding: 20px;
+}
+.ln-course-mentor-content h2 {
+    font-size: 34px;
+    color: #00aeef;
+}
+.ln-course-mentor-content h4 {
+    font-size: 22px;
+    color: #6c6c6c;
+    line-height: 1.5;
+}
+.ln-course-mentor-content h4 span {
+    color: #00aeef;
+}
+.marketplace-badge {
+    text-align: right;
+}
+.marketplace-badge ul li {
+    list-style: none;
+    display: inline;
+}
+.marketplace-badge ul li img {
+    width: 75px;
+    height: 75px;
+}
+.ln-course-mentor-content p {
+    margin: 25px 0;
+    line-height: 1.8em;
+}
+.mentor-social-media ul li {
+    list-style: none;
+    display: inline;
+    margin-right: 7px;
+}
+.mentor-social-media ul li .fa {
+    width: 30px;
+    height: 30px;
+    background: #00aeef;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    transition: all ease 0.9s;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+}
+.mentor-social-media ul li .fa-linkedin:hover {
+    background: #0077b5;
+}
+.mentor-social-media ul li .fa-facebook:hover {
+    background: #4267b2;
+}
+.mentor-social-media ul li .fa-twitter:hover {
+    background: #1a91da;
+}
+.mentor-social-media ul li .fa-instagram:hover {
+    background: #d04085;
+}
+.mentor-social-media ul li .fa-youtube:hover {
+    background: #ff0000;
+}
+
+/* ================================
+= Landing Page How To Start Section
+================================= */
+.ln-how-to-start {
+    padding: 100px 0;
+    background: #f7fdff;
+}
+.ln-how-to-start h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.ln-how-to-start p {
+    margin: 50px 0;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+.how-to-start-content img {
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 50%;
+}
+.how-to-start-content h2 {
+    font-size: 26px;
+    color: #6c6c6c;
+}
+.how-to-start-content p {
+    margin: 10px 0 0;
+    color: #6c6c6c;
+}
+.computer-requirements {
+    margin-top: 50px;
+}
+.computer-requirements h1 {
+    font-size: 34px;
+    color: #6c6c6c;
+    line-height: 1.3em;
+}
+.computer-requirements p {
+    color: #6c6c6c;
+    line-height: 1.88;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+/* ================================
+= Landing Page Contact us Section
+================================= */
+.ln-contact-us {
+    padding: 100px 0;
+    background: #fff;
+}
+.ln-contact-us h2 {
+    font-size: 34px;
+    color: #6c6c6c;
+}
+.ln-contact-us p {
+    margin: 50px 0;
+    color: #6c6c6c;
+    line-height: 1.88em;
+}
+.input-group-addon-textarea {
+    display: block;
+    height: 45px;
+    background: #11adef;
+    color: #fff;
+    width: 150px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+}
+.input-group-addon {
+    height: 45px;
+    background: #11adef;
+    color: #fff;
+    width: 115px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 0.375rem 1.25rem;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6c6c6c;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #11adef;
+    border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #2bb673;
+    outline: 0;
+    box-shadow: 0 0 0 0 #2bb673;
+}
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #bce0fd;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #bce0fd;
+}
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #bce0fd;
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #bce0fd;
+}
+input::placeholder {
+    color: #bce0fd;
+}
+input[type="email"].form-control::-webkit-input-placeholder,
+input[type="text"].form-control::-webkit-input-placeholder,
+textarea.form-control::-webkit-input-placeholder {
+    color: #bce0fd;
+}
+select.form-control {
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+}
+select.form-control:focus {
+    background-image: linear-gradient(45deg, green 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, green 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: green;
+    outline: 0;
+}
+.btn-send {
+    background: #2bb673;
+    border: 1px solid #2bb673;
+    font-size: 22px;
+    color: #fff;
+    padding: 15px 40px;
+    margin-top: 15px;
+    transition: 0.3s ease-in-out;
+}
+.btn-send:hover {
+    background: #00aeef;
+    border: 1px solid #00aeef;
+    color: #fff;
+}
+
+/* Footer Section CSS */
+.ln-footer {
+    position: relative;
+    background: #00aeef;
+    padding: 15px 0;
+    text-align: center;
+}
+.ln-footer-nav ul li {
+    list-style: none;
+    display: inline;
+    margin: 0 15px;
+}
+.ln-footer-nav ul li a {
+    color: #fff;
+    font-size: 20px;
+}
+.ln-footer-social ul li {
+    list-style: none;
+    display: inline;
+    margin: 0 5px;
+}
+.ln-footer-social ul li a {
+    color: #fff;
+}
+.ln-footer-social ul li a .fa-instagram,
+.ln-footer-social ul li a .fa-twitter,
+.ln-footer-social ul li a .fa-facebook {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+.ln-footer-social ul li a .fa-instagram:hover {
+    background: #d04085;
+}
+.ln-footer-social ul li a .fa-twitter:hover {
+    background: #1a91da;
+}
+.ln-footer-social ul li a .fa-facebook:hover {
+    background: #4267b2;
+}
+
+/* Back To Top Button */
+.scroll-top {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 125px;
+    height: 100%;
+    background: #43c7ff;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+.scroll-top .fa {
+    color: #fff;
+    font-size: 26px;
+    line-height: 60px;
+}
+.scroll-top:hover {
+    background: #2bb673;
+    cursor: pointer;
+}
+.modal-logo {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.modal-logo img {
+    max-width: 150px;
+    height: auto;
+}
+.modal-body .form-group .modal-label {
+    background: #00aeef;
+    width: 125px;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    color: #fff;
+    display: block;
+}
+
+/* Thank You Page CSS */
+.payment-success {
+    padding: 125px 0 50px;
+}
+.bg-thankyou {
+    background: #f7f7f7;
+    padding: 25px;
+    border: 3px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+}
+.bg-thankyou .fa {
+    color: #fff;
+    background: #2bb673;
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    border-radius: 50%;
+    font-size: 32px;
+    display: block;
+    margin: 0 auto;
+}
+.bg-thankyou h1 {
+    color: #00aeef;
+    font-weight: 700;
+    margin: 15px 0 10px;
+    font-size: 40px;
+}
+.bg-thankyou h3 {
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+}
+.bg-thankyou p {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+.after-admission {
+    padding: 50px 0 150px;
+}
+.after-admission h3 {
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.th-footer {
+    margin-bottom: 0 !important;
+}
+
+/* Payment Un-Successfull Page CSS */
+.payment-unsuccess {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 82vh;
+}
+.bg-unsuccess {
+    background: #f7f7f7;
+    padding: 40px 0;
+    border: 3px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+}
+.payment-unsuccess .fa {
+    color: #fff;
+    background: #ca2535;
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    border-radius: 50%;
+    font-size: 32px;
+    display: block;
+    margin: 0 auto;
+}
+.payment-unsuccess h1 {
+    color: #00aeef;
+    font-weight: 700;
+    margin: 15px 0 10px;
+    font-size: 40px;
+}
+.payment-unsuccess h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+.btn-try-again {
+    background: #2bb673;
+    border: 1px solid #2bb673;
+    font-size: 22px;
+    color: #fff;
+    padding: 15px 40px;
+    transition: 0.3s ease-in-out;
+}
+.btn-try-again:hover {
+    background: #00aeef;
+    border: 1px solid #00aeef;
+    color: #fff;
+}
+
+/* Medium Device */
+@media (min-width: 768px) {
+    .landing-banner {
+        height: 80vh;
+    }
+    .get-admission {
+        display: none;
+    }
+}
+
+/* Tablet View */
+@media (min-width: 576px) and (max-width: 768px) {
+    .ln-header {
+        height: 1150px;
+        padding: 20px 0;
+    }
+    .mobile-hidden {
+        display: none;
+    }
+    .desk-hidden {
+        display: block;
+    }
+    .landing-banner h1 {
+        font-size: 44px;
+        margin-top: 25px;
+    }
+    .ln-course-info ul li {
+        font-size: 24px;
+    }
+    .ln-banner-btn ul li {
+        margin-right: 5px;
+    }
+    .landing-banner img {
+        margin-top: 75px;
+    }
+    .image-one,
+    .image-two,
+    .image-three {
+        width: 30%;
+        float: left;
+        border: 0;
+        margin: 0;
+        margin-right: 15px;
+    }
+    .blue-shadow,
+    .green-shadow {
+        display: block;
+    }
+    .progress-percent-counter {
+        display: none;
+    }
+    #progress-bar-container li .step-inner {
+        transform: rotate(-90deg);
+        white-space: nowrap;
+    }
+    #progress-bar-container {
+        margin-top: 125px;
+    }
+    .ln-course-curriculum-section p {
+        margin: 80px 0 50px;
+    }
+    #progress-bar-container #line {
+        top: 100px;
+    }
+    .ln-tab-area,
+    .ln-course-curriculum-section,
+    .course-for-whoom,
+    .std-support-system,
+    .ln-std-success-stories,
+    .where-students-worked,
+    .ln-news-coverage,
+    .ln-course-mentor,
+    .ln-how-to-start,
+    .ln-contact-us,
+    .payment-unsuccess {
+        padding: 50px 0;
+    }
+    .payment-success,
+    .after-admission {
+        padding: 15px 0 20px;
+    }
+    .payment-unsuccess {
+        height: initial;
+    }
+    .ln-tab-panel {
+        display: none;
+    }
+    .ln-course-details h2,
+    .ln-course-details p,
+    .ln-course-details-summary h4,
+    .ln-course-curriculum-section h2,
+    .ln-course-curriculum-section p,
+    .section-content,
+    .course-for-whoom h2,
+    .course-for-whoom p,
+    .std-support-system h2,
+    .std-support-system p,
+    .ln-std-success-stories h2,
+    .ln-std-success-stories p,
+    .where-students-worked h2,
+    .where-students-worked p,
+    .ln-news-coverage h2,
+    .ln-news-coverage p,
+    .ln-course-mentor h2,
+    .ln-course-mentor p,
+    .ln-course-mentor-content h4,
+    .ln-how-to-start h2,
+    .ln-how-to-start p,
+    .ln-contact-us h2,
+    .ln-contact-us p {
+        text-align: center !important;
+    }
+    .faq-qa h3,
+    .std-support-system-content h3,
+    .std-working-at h3,
+    .how-to-start-content h2 {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .std-support-system-content p {
+        margin: 5px 0 40px;
+    }
+    .item {
+        text-align: center;
+    }
+    .slider-content {
+        padding-bottom: 50px;
+    }
+    .slider-content p {
+        margin: 20px 0;
+        width: 100%;
+    }
+    .owl-nav .owl-prev {
+        left: 0;
+    }
+    .owl-nav .owl-next {
+        right: 0;
+    }
+    .news-slider .owl-nav .owl-prev {
+        left: 0;
+    }
+    .news-slider .owl-nav .owl-next {
+        right: 0;
+    }
+    .marketplace-badge,
+    .mentor-social-media {
+        text-align: center;
+    }
+    .scroll-top {
+        display: none;
+    }
+    .ln-footer-social {
+        margin-top: 15px;
+    }
+    .std-support-system-content img,
+    .std-working-at img,
+    .how-to-start-content img {
+        display: block;
+        margin: 0 auto;
+    }
+    .std-working-at-img,
+    .std-support-system-img,
+    .how-to-start-img {
+        max-width: 200px;
+    }
+    .get-admission {
+        background: #2bb673;
+        padding: 10px 0;
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 99;
+    }
+    .get-admission a {
+        color: #fff;
+    }
+    .ln-footer {
+        margin-bottom: 75px;
+    }
+}
+
+/* CSS For Mobile Device */
+@media (min-width: 320px) and (max-width: 576px) {
+    .ln-header {
+        height: initial;
+        padding: 20px 0;
+    }
+    .mobile-hidden {
+        display: none;
+    }
+    .desk-hidden {
+        display: block;
+    }
+    .landing-banner h1 {
+        font-size: 44px;
+        margin-top: 25px;
+    }
+    .ln-course-info ul li {
+        font-size: 24px;
+    }
+    .ln-banner-btn ul li {
+        margin-right: 5px;
+    }
+    .landing-banner img {
+        margin-top: 75px;
+    }
+    .blue-shadow,
+    .green-shadow {
+        display: block;
+    }
+    .progress-percent-counter {
+        display: none;
+    }
+    #progress-bar-container li .step-inner {
+        transform: rotate(-90deg);
+        white-space: nowrap;
+    }
+    #progress-bar-container {
+        margin-top: 125px;
+    }
+    .ln-course-curriculum-section p {
+        margin: 80px 0 50px;
+    }
+    #progress-bar-container #line {
+        top: 100px;
+    }
+    .ln-tab-area,
+    .ln-course-curriculum-section,
+    .course-for-whoom,
+    .std-support-system,
+    .ln-std-success-stories,
+    .where-students-worked,
+    .ln-news-coverage,
+    .ln-course-mentor,
+    .ln-how-to-start,
+    .ln-contact-us,
+    .payment-unsuccess {
+        padding: 50px 0;
+    }
+    .payment-success,
+    .after-admission {
+        padding: 15px 0 20px;
+    }
+    .payment-unsuccess {
+        height: initial;
+    }
+    .ln-tab-panel {
+        display: none;
+    }
+    .ln-course-details h2,
+    .ln-course-details p,
+    .ln-course-details-summary h4,
+    .ln-course-curriculum-section h2,
+    .ln-course-curriculum-section p,
+    .section-content,
+    .course-for-whoom h2,
+    .course-for-whoom p,
+    .std-support-system h2,
+    .std-support-system p,
+    .ln-std-success-stories h2,
+    .ln-std-success-stories p,
+    .where-students-worked h2,
+    .where-students-worked p,
+    .ln-news-coverage h2,
+    .ln-news-coverage p,
+    .ln-course-mentor h2,
+    .ln-course-mentor p,
+    .ln-course-mentor-content h4,
+    .ln-how-to-start h2,
+    .ln-how-to-start p,
+    .ln-contact-us h2,
+    .ln-contact-us p {
+        text-align: center !important;
+    }
+    .faq-qa h3,
+    .std-support-system-content h3,
+    .std-working-at h3,
+    .how-to-start-content h2 {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .std-support-system-content p {
+        margin: 5px 0 40px;
+    }
+    .item {
+        text-align: center;
+    }
+    .slider-content {
+        padding-bottom: 50px;
+    }
+    .slider-content p {
+        margin: 20px 0;
+        width: 100%;
+    }
+    .owl-nav .owl-prev {
+        left: 0;
+    }
+    .owl-nav .owl-next {
+        right: 0;
+    }
+    .news-slider .owl-nav .owl-prev {
+        left: 0;
+    }
+    .news-slider .owl-nav .owl-next {
+        right: 0;
+    }
+    .marketplace-badge,
+    .mentor-social-media {
+        text-align: center;
+    }
+    .scroll-top {
+        display: none;
+    }
+    .ln-footer-social {
+        margin-top: 15px;
+    }
+    .std-support-system-content img,
+    .std-working-at img,
+    .how-to-start-content img {
+        display: block;
+        margin: 0 auto;
+    }
+    .std-working-at-img,
+    .std-support-system-img,
+    .how-to-start-img {
+        max-width: 200px;
+    }
+    .btn-news {
+        position: initial;
+    }
+    .news-coverage-thumbnail-hover h2 {
+        display: none;
+    }
+    .get-admission {
+        background: #2bb673;
+        padding: 10px 0;
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 99;
+    }
+    .get-admission a {
+        color: #fff;
+    }
+    .ln-footer {
+        margin-bottom: 75px;
+    }
+}
+
+/* Extra Small Device */
+@media screen and (max-width: 380px) {
+    .ln-banner-btn ul li .btn-banner-one,
+    .ln-banner-btn ul li .btn-banner-two {
+        text-align: center;
+        display: block;
+    }
+}

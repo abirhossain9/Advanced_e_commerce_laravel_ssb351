@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/','App\Http\Controllers\frontend\PagesController@index')->name('home');
+Route::get('/batch/{slug}','App\Http\Controllers\frontend\PagesController@coursedetails')->name('course.details');
 
 /*
 |--------------------------------------------------------------------------

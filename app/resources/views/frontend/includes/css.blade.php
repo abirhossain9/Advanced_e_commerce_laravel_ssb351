@@ -10,7 +10,6 @@
     <!-- Owl -->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.theme.default.min.css')}}">
-
     <!-- Magnific Popup-->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/magnific-popup.css')}}">
     <!--Template Stylesheets css-->
