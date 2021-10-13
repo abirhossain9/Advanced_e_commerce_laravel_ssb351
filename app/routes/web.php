@@ -35,7 +35,7 @@ Route::get('/batch/{slug}','App\Http\Controllers\frontend\PagesController@course
 // })->middleware(['auth'])->name('dashboard');
 
 Route::group(['prefix' => 'admin'], function(){
-    Route::get('/dashboard', 'App\Http\Controllers\Backend\DashboardController@dashboard')->middleware(['auth'])->name('dashboard');
+    Route::get('/dashboard', 'App\Http\Controllers\Backend\DashboardController@dashboard')->middleware(['auth','verified'])->name('dashboard');
      //this routes are for branch management
      Route::group(['prefix' => '/branch'], function(){
         Route::get('/manage','App\Http\Controllers\Backend\BranchController@index')->name('branch.manage');
