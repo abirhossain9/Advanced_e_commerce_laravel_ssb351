@@ -103,8 +103,8 @@
             <!-- Banner Course Short Info Text -->
             <div class="ln-course-info">
               <ul>
-                <li>কোর্সের মেয়াদ : <span>৬ মাস</span></li>
-                <li>কোর্স ফী : <span>১৫,০০০</span></li>
+                <li>কোর্সের মেয়াদ : <span>{{$batch->course->course_duration}}</span></li>
+                <li>কোর্স ফী : <span>{{$batch->course->bangla_price}}</span></li>
                 <li>ক্লাসের সময় : <span>শুক্রবার রাত ১০টা</span></li>
                 <li>ক্লাস শুরুর তারিখ : <span>শুক্রবার, ১৫ মে*</span></li>
               </ul>
@@ -285,8 +285,8 @@
                 <div class="section-content content01 active">
                   <div class="row">
                     <div class="col-md-6 col-sm-12 col-12">
-                      <h3>ইলাস্ট্রেটর</h3>
-                      <p>অর্থহীন লেখা যার মাঝে আছে অনেক কিছু। হ্যাঁ, এই লেখার মাঝেই আছে অনেক কিছু। যদি তুমি মনে করো, এটা তোমার কাজে লাগবে, তাহলে তা লাগবে কাজে। নিজের ভাষায় লেখা দেখতে অভ্যস্ত হও। মনে রাখবে লেখা অর্থহীন হয়, যখন তুমি তাকে অর্থহীন মনে করো; আর লেখা অর্থবোধকতা তৈরি করে, যখন তুমি তাতে অর্থ ঢালো। যেকোনো লেখাই তোমার কাছে অর্থবোধকতা তৈরি করতে পারে, যদি তুমি সেখানে অর্থদ্যোতনা দেখতে পাও। …ছিদ্রান্বেষণ? না, তা হবে কেন?</p>
+                      <h3>{{$course_curriculum->one_en}}</h3>
+                      <p>{{$course_curriculum->one_desc}}</p>
                     </div>
 
                     <div class="col-md-6 col-sm-12 col-12">
