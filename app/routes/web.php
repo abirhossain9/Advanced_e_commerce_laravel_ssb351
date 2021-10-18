@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','App\Http\Controllers\frontend\PagesController@index')->name('home');
 Route::get('/batch/{slug}','App\Http\Controllers\frontend\PagesController@coursedetails')->name('course.details');
 Route::get('/student-login','App\Http\Controllers\frontend\PagesController@stdLogin')->name('stdLogin');
+Route::get('/student-register','App\Http\Controllers\frontend\PagesController@stdRegister')->name('stdRegister');
+Route::get('/student-dashboard','App\Http\Controllers\frontend\PagesController@stdDashboard')->middleware(['auth','verified'])->name('stdDashboard');
 /*
 |--------------------------------------------------------------------------
 | Backend Admin Panel Web Routes
