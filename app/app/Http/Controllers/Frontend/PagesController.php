@@ -42,4 +42,10 @@ class PagesController extends Controller
     public function stdLogin(){
         return view('frontend.pages.stdlogin');
     }
+    public function stdRegister(){
+        return view('frontend.pages.stdRegister');
+    }
+    public function stdDashboard(){
+        return view('frontend.pages.stdDashboard');
+    }
 }
