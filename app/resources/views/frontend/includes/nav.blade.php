@@ -46,17 +46,16 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <a class="dropdown-item" href="#">Action</a>
-                                      <a class="dropdown-item" href="#">Another action</a>
-                                      <form method="POST" action="{{ route('logout') }}">
+                                      <a class="dropdown-item" href="{{route('stdDashboard')}}">Dashboard</a>
+                                      <form method="POST" action="{{route('logout') }}">
                                         @csrf
-                                          <a href="{{route('logout')}}" onclick="event.preventDefault();
-                                          this.closest('form').submit();">
-                                         Logout</a>
-                                    </form>
+                                          <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault();
+                                          this.closest('form').submit();">Logout</a>
+                                      </form>
                                     </div>
                                   </div>
                             @else
-                            <a href=""><i class="icofont-support"></i>Register</a>
+                            <a href="{{route('stdRegister')}}"><i class="icofont-support"></i>Register</a>
                             <a href="{{route('stdLogin')}}"><i class="icofont-ui-user"></i>Login</a>
                             @endif
                         </div>
