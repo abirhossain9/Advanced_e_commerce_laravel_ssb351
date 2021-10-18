@@ -39,10 +39,26 @@
                         </div>
 
                         <div class="ml-auto ml-auto-mobile top-bar">
-
-                            <a href="{{route('login')}}"><i class="icofont-ui-user"></i>Login / Signup</a>
-                            <a href=""><i class="icofont-support"></i>Get Support</a>
-
+                            @if (Auth::check())
+                                <div class="dropdown">
+                                    <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      {{Auth::user()->name}}
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">Action</a>
+                                      <a class="dropdown-item" href="#">Another action</a>
+                                      <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                          <a href="{{route('logout')}}" onclick="event.preventDefault();
+                                          this.closest('form').submit();">
+                                         Logout</a>
+                                    </form>
+                                    </div>
+                                  </div>
+                            @else
+                            <a href=""><i class="icofont-support"></i>Register</a>
+                            <a href="{{route('stdLogin')}}"><i class="icofont-ui-user"></i>Login</a>
+                            @endif
                         </div>
                     </div>
                 </nav>
