@@ -72,9 +72,26 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function StudentUpdate(Request $request, $id)
     {
+        $std = User::find($id);
+        $std->name  =$request->name;
+        $std->phone =$request->phone;
+        $std->address =$request->address;
 
+        if(!empty($request->image)){
+            if(File::exists('backend/img/user/'.$std->image)){
+                File::delete('backend/img/user/'.$std->image);
+            }
+            $image = $request->file('image');
+            $img = rand() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('backend/img/user/'.$img);
+            Image::make($image)->save($location);
+            $std->image = $img;
+        }
+
+        $std->save();
+        return redirect()->route('stdDashboard');
     }
 
     /**
