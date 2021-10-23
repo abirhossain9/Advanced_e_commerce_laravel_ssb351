@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
        <div class="col-md-12">
-        <nav>
+         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
               <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Profile</a>
               <a class="nav-item nav-link" id="nav-course-tab" data-toggle="tab" href="#nav-course" role="tab" aria-controls="nav-course" aria-selected="false">Purchased Course</a>
@@ -13,7 +13,7 @@
           </nav>
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              <form action="{{route('student.update',Auth::user()->id'')}}" method="POST" enctype="multipart/form-data">
+              <form action="{{route('student.update',Auth::user()->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="container">
                     <div class="row">
