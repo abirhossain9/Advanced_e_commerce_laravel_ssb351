@@ -2402,3 +2402,6 @@ Login
     border-radius: 8px;
     font-size: 16px;
 }
+.btn.focus, .btn:focus {
+    box-shadow: none !important;
+}
