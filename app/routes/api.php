@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/myFirstApi','App\Http\Controllers\BranchesApi@index');
+Route::get('/myFirstApi/{id}','App\Http\Controllers\BranchesApi@show');
+
+
