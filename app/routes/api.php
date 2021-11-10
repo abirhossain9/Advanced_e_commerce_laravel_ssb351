@@ -22,3 +22,4 @@ Route::get('/myFirstApi','App\Http\Controllers\BranchesApi@index');
 Route::get('/myFirstApi/{id}','App\Http\Controllers\BranchesApi@show');
 
 
+

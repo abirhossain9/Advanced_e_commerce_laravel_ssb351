@@ -22,6 +22,8 @@ Route::get('/student-login','App\Http\Controllers\frontend\PagesController@stdLo
 Route::get('/student-register','App\Http\Controllers\frontend\PagesController@stdRegister')->name('stdRegister');
 Route::get('/student-dashboard','App\Http\Controllers\frontend\PagesController@stdDashboard')->middleware(['auth','verified'])->name('stdDashboard');
 Route::post('/student-dashboard/update/{id}','App\Http\Controllers\Frontend\UsersController@StudentUpdate')->name('student.update');
+Route::get('/batch/{slug}/admission','App\Http\Controllers\Frontend\PagesController@admission')->name('getadmission');
+
 /*
 |--------------------------------------------------------------------------
 | Backend Admin Panel Web Routes

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Backend\Branch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BranchesApi extends Controller
 {
@@ -35,7 +36,7 @@ class BranchesApi extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

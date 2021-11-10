@@ -48,4 +48,12 @@ class PagesController extends Controller
     public function stdDashboard(){
         return view('frontend.pages.stdDashboard');
     }
+    public function admission($slug){
+        $batch = Batch::orderBy('id','asc')->where('slug',$slug)->first();
+        $course = Course::orderBy('id','asc')->where('id',$batch->course_id)->first();
+        $course_curriculum = CourseCurriculum::where('course_id',$course->id)->first();
+        $mentor = Mentor::where('id',$batch->mentor_id)->first();
+        return view('frontend.pages.admission',compact('batch','course','course_curriculum'));
+
+    }
 }
