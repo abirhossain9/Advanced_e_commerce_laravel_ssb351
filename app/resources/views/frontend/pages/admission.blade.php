@@ -3,6 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md 3">
+                <h2>Complete Your Admission</h2><br>
                 <form
                     action="{{route('student.update',Auth::user()->id)}}"
                     method="POST"

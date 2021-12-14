@@ -18,20 +18,22 @@ use App\Http\Controllers\SslCommerzPaymentController;
 //     return view('welcome');
 // });
 Route::get('/','App\Http\Controllers\frontend\PagesController@index')->name('home');
-Route::get('/batch/{slug}','App\Http\Controllers\frontend\PagesController@coursedetails')->name('course.details');
+
 Route::get('/student-login','App\Http\Controllers\frontend\PagesController@stdLogin')->name('stdLogin');
 Route::get('/student-register','App\Http\Controllers\frontend\PagesController@stdRegister')->name('stdRegister');
 Route::get('/student-dashboard','App\Http\Controllers\frontend\PagesController@stdDashboard')->middleware(['auth','verified'])->name('stdDashboard');
 Route::post('/student-dashboard/update/{id}','App\Http\Controllers\Frontend\UsersController@StudentUpdate')->name('student.update');
+
+Route::get('/batch/{slug}','App\Http\Controllers\frontend\PagesController@coursedetails')->name('course.details');
 Route::get('/batch/{slug}/admission','App\Http\Controllers\Frontend\PagesController@admission')->name('getadmission');
 
 
 // SSLCOMMERZ Start
-Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+
 Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
 Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
-Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
 
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
