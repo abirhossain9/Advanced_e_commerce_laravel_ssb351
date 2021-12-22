@@ -4,17 +4,15 @@
         <div class="row">
             <div class="col-md-6 offset-md 3">
                 <h2>Complete Your Admission</h2><br>
-                <form
-                    action="{{route('student.update',Auth::user()->id)}}"
-                    method="POST"
-                    enctype="multipart/form-data">
-                    @csrf
+                <form action="{{ url('/pay') }}" method="POST" class="needs-validation">
+                    <input type="hidden" value="{{ csrf_token() }}" name="_token" />
+
                         <div class="form-group">
                             <label>Full Name</label>
                             <input
                                 type="text"
                                 class="form-control"
-                                name="name"
+                                name="fullname"
                                 value="@if(Auth::check()) {{Auth::user()->name}} @else {{ old('name') }} @endif">
                         </div>
                         <div class="form-group">
@@ -45,6 +43,18 @@
                                 placeholder="Your Phone No">
                         </div>
                         <div class="form-group">
+                              <input
+                                type="hidden"
+                                name="course_id"
+                                value="{{ $course->id }}">
+                                <input
+                                type="hidden"
+                                name="course_price"
+                                value="{{ $course->price }}">
+                                <input
+                                type="hidden"
+                                name="batch_id"
+                                value="{{ $batch->id }}">
                             <input
                                 type="submit"
                                 class="btn btn-success custom-btn "

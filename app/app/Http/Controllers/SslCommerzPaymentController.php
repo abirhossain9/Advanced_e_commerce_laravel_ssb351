@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use Illuminate\Support\Facades\Auth;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -26,29 +27,33 @@ class SslCommerzPaymentController extends Controller
         # In "orders" table, order unique identity is "transaction_id". "status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
 
         $post_data = array();
-        $post_data['total_amount'] = '10'; # You cant not pay less than 10
+        $post_data['total_amount'] = $request->course_price; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
-        $post_data['cus_name'] = 'Customer Name';
-        $post_data['cus_email'] = 'customer@mail.com';
-        $post_data['cus_add1'] = 'Customer Address';
+        $post_data['cus_name'] = $request->fullname;
+        $post_data['cus_email'] = $request->email;
+        $post_data['cus_add1'] = $request->address;
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
         $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_phone'] = $request->phone;
         $post_data['cus_fax'] = "";
+        $post_data['cus_user_id'] = Auth::user()->id;
+        $post_data['cus_course_id'] = $request->course_id;
+        $post_data['cus_course_id'] = $request->course_id;
+        $post_data['cus_batch_id'] = $request->batch_id;
 
         # SHIPMENT INFORMATION
-        $post_data['ship_name'] = "Store Test";
+        $post_data['ship_name'] = "E Learning Platform";
         $post_data['ship_add1'] = "Dhaka";
         $post_data['ship_add2'] = "Dhaka";
         $post_data['ship_city'] = "Dhaka";
         $post_data['ship_state'] = "Dhaka";
-        $post_data['ship_postcode'] = "1000";
+        $post_data['ship_postcode'] = "1229";
         $post_data['ship_phone'] = "";
         $post_data['ship_country'] = "Bangladesh";
 
@@ -73,6 +78,9 @@ class SslCommerzPaymentController extends Controller
                 'amount' => $post_data['total_amount'],
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],
+                'user_id' => $post_data['cus_user_id'],
+                'course_id' => $post_data['cus_course_id'],
+                'batch_id' =>  $post_data['cus_batch_id'],
                 'transaction_id' => $post_data['tran_id'],
                 'currency' => $post_data['currency']
             ]);
@@ -166,6 +174,9 @@ class SslCommerzPaymentController extends Controller
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
         $currency = $request->input('currency');
+        $batch_id = $request->input('batch_id');
+        $course_id = $request->input('course_id');
+        $user_id = $request->input('user_id');
 
         $sslc = new SslCommerzNotification();
 

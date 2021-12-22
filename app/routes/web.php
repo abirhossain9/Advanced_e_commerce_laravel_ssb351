@@ -30,7 +30,7 @@ Route::get('/batch/{slug}/admission','App\Http\Controllers\Frontend\PagesControl
 
 // SSLCOMMERZ Start
 
-Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+// Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
 Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
 
