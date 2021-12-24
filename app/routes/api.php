@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/myFirstApi','App\Http\Controllers\BranchesApi@index');
 Route::get('/myFirstApi/{id}','App\Http\Controllers\BranchesApi@show');
-
-
+Route::post('/branchAdd','App\Http\Controllers\BranchesApi@store');
+Route::put('/branchUpdate/{id}','App\Http\Controllers\BranchesApi@update');
+Route::delete('/branchDelete/{id}','App\Http\Controllers\BranchesApi@destroy');
 

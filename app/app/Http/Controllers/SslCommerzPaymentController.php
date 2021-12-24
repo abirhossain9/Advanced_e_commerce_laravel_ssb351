@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use App\Models\Backend\Batch;
+use App\Models\Backend\Course;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class SslCommerzPaymentController extends Controller
@@ -169,7 +172,7 @@ class SslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-        echo "Transaction is Successful";
+        //echo "Transaction is Successful";
 
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
@@ -180,11 +183,15 @@ class SslCommerzPaymentController extends Controller
 
         $sslc = new SslCommerzNotification();
 
+
         #Check order status in order tabel against the transaction id or order id.
         $order_detials = DB::table('orders')
             ->where('transaction_id', $tran_id)
-            ->select('transaction_id', 'status', 'currency', 'amount')->first();
-
+            ->select('id','transaction_id', 'status','address', 'currency', 'amount','batch_id','course_id','user_id')->first();
+        $batch = Batch::where('id',$order_detials->batch_id)->first();
+        $course = Course::where('id',$order_detials->course_id)->first();
+        $user = User::where('id',$order_detials->user_id)->first();;
+        return view('frontend.pages.success',compact('order_detials','batch','course','user'));
         if ($order_detials->status == 'Pending') {
             $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
@@ -213,7 +220,8 @@ class SslCommerzPaymentController extends Controller
             /*
              That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
              */
-            echo "Transaction is successfully Completed";
+            return view('frontend.pages.success',compact('order_detials'));
+            //echo "Transaction is successfully Completed";
         } else {
             #That means something wrong happened. You can redirect customer to your product page.
             echo "Invalid Transaction";
